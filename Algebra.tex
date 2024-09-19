@@ -1,0 +1,206 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}
+\usepackage{amsmath}
+\usepackage{graphicx}%Вставка картинок правильная
+\usepackage{float}%"Плавающие" картинки
+\usepackage{wrapfig}%Обтекание фигур (таблиц, картинок и прочего)
+\usepackage{epstopdf}
+\usepackage{caption} %заголовки плавающих объектов
+\usepackage[unicode, pdftex]{hyperref}
+\usepackage[usenames]{color}
+\usepackage{colortbl}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsfonts}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage{subfig}
+\usetikzlibrary{}
+\newcommand{\eqdef}{\stackrel{\mathrm{def}}{=}}
+\captionsetup[figure]{name=Рис}
+\title{Теория МКН СПБГУ}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+{\LARGE \textbf{Теория с лекций. Алгебра}}
+\end{center}
+\begin{figure}[h]
+\centering
+\end{figure}
+\end{titlepage}
+
+\begin{titlepage}
+\clearpage
+\textcolor{blue}{\tableofcontents}
+\end{titlepage}
+
+\section{Алгебра}
+\subsection*{Рекомендуемая литература}
+ \begin{enumerate}
+ \item Кострикин "Основа алгебры" (1том)
+ \item Винберг "Курс алгебры"
+ \item Лэнг "Алгебра"
+ \item Сборник задач по алгебре под редакцией Кострикина
+ \item Сборник задач Фадеева и Соминского
+ \end{enumerate}
+  
+\subsection{Кольцо}
+Пусть A - некоторое непустое множество. Пусть на нем даны операции: $(a,b) \rightarrow (a+b); (a,b) \rightarrow (ab); a,b \in A$\\
+Дадим определение операциям сложения и умножения:\\
+\begin{enumerate}
+\item $\forall a,b,c \in A : a+(b+c) =(a+b)+c$ - ассоциативность по сложению
+\item $\exists 0 \in A, \forall a \in A: a+0=0+a=a$
+\item $\forall a \in A, \exists b \in A: a+b = b+a = 0$ b - противополжный a элемент\\
+Удостоверимся в том, что 0 - единственный: 
+\begin{equation*}
+\begin{cases}
+a+0=o+a=a\\
+a+0`=0`+a = a\\ \forall a \in A
+\end {cases}
+\leftrightarrow 
+ \begin{cases}
+0`+0=o+0`=0`\\
+0+0`=0`+0 = 0\\ \forall a \in A
+\end {cases}
+\leftrightarrow 
+0=0`
+\end{equation*}
+\item $\forall a,b \in A: a+b=b+a$ - коммутативность по сложению
+\item $\forall a,b,c \in A: (a+b)c=ac+bc=bc+ac$
+\end{enumerate}
+Множество, которое удовлетворяет этим аксиомам - кольцо в широком смысле. В нашел курсе мы будем рассматривать более частный вариант кольца, добавив еще несколько определений:\\
+\begin{enumerate}
+\item $\forall a,b \in A: ab=bc$ - коммутативность по умножению
+\item $\forall a,b,c \in A: a(bc) = (ab)c$ - ассоциативность по умножению
+\item $\forall a \in A: a*1=1*a=a$
+\end{enumerate}
+Есть кольцо где выполняется еще одна аксиома:\\
+$\forall a \in A, a \neq 0, \exists b \in A: ab=ba=1$\\
+Если выполнены все эти аксиомы, то такое множество называется полем.\\
+Примеры колец:
+\begin{enumerate}
+\item $\mathbb{Z}$
+\item A = 0
+\item $d \in \mathbb{N}, \sqrt{d} \neq \mathbb{Z}$, образующие множества $[\sqrt{b}] \mathbb{Z}$
+\end{enumerate}
+Примеры полей:
+\begin{enumerate}
+\item $\mathbb{Q}$
+\item $\mathbb{R}$
+\item $\mathbb{C}$
+\end{enumerate}
+Если есть 2 кольца A,B, то мы можем образовать их произведение и сложение следующим образом:
+\begin{enumerate}
+\item $(a_1;b_1)+(a_2;b_2) = (a_1+a_2;b_1+b_2)$
+\item $(a_1;b_1)*(a_2;b_2) = (a_1*a_2;b_1*b_2)$
+\end{enumerate}
+Мы можем аналогично задать произведение $A_1*A_2....*A_n$:\\
+Доказательство этого утверждения проведем по индукции (в данном случае свойства ассоциативности):\\
+База: при n =3 - доказано по аксиоме.\\
+Переход: Есть произведение $(x_1...x_k)(x_{k-1}...x_n)$.\\
+Введем понятие левонормированного произведения: $(...(x_1x_2)x_3).....x_n)$ - левонормированное произведение. Такое произведение можно раскрыть с помощью ассоциативности умножения (и привести любое произведение к такому виду).\\
+Тогда если в левой скобки будет 1 элемент, то мы получили еще одно левонормированное проивзедение и победили.\\
+Если же нет, то тогда рассмотрим две скобки. К правой применим свойство ассоциативности. Тогда вновь получим случай для n-1, т.е мы победили.\\
+Аналогично для сложения.\\
+Докажем еще одно свойство:
+$(-a)b=-ab$\\
+Прибавим к обеим частям ab:\\
+$ab+(-a)b=ab+(-ab) \leftrightarrow b(a+(-a))=$
+\subsection{Понятние идеала для кольца.}
+Пусть I - непустое множество A, при этом $x,y \in I \rightarrow x+y \in I; x \in I, a \in A: ax \in I$\\
+Если $1 \in I \Rightarrow \forall a \in A: a \in I$\\
+Такой идеал называется единичным.\\
+0 - всегда принадлежит иделу, докажем это.\\
+$x \in I \Rightarrow x*(-1)=-x \in I; x+(-x)=0 \in I$\\
+{0} - нулевой идеал \\
+Найдем все иделы целых чисел. Возьмем  $k \in \mathbb{Z}, k\mathbb{Z}$ - это идеал. Причем других идеалов нет.\\
+Теорема.\\
+Для любого идела кольца $\mathbb{Z}$ имеет вид $k\mathbb{Z}, k \in \mathbb{Z}$. Если идеал нулевой, то теорема доказана. Теперь предположим, что идеал не нулевой. Тогда в нем точно будут положительные числа. Пусть k - наименьшее положительное число в I. Тогда $k\mathbb{Z} \in I$.\\
+Возьмем $x \in \mathbb{Z}$. Докажем, что $x \vdots k$.\\
+Поделим x на k с остатком. $x = kq+r \Rightarrow r = x-kq ; r \in I$. Но r меньше k, противоречие! Так что r = 0.\\
+Теорема доказана\\
+Ненулевое кольцо - область целостности/область/целостное кольцо, если $\forall a,b \neq 0: ab \neq 0$\\
+Если $ab = 0 \Rightarrow a=0 \vee b=0$\\
+Приме. $\mathbb{Z}$, любое поле.\\
+Область целостности, в котором $\forall$ идеал главный называется кольцом главных идеалов. Идеал главный, если он имеет вид $(a), a \in A$.
+Поля можно охарактеризовать как кольца имеющие 2 главных идела (0) и (1).
+Фактор кольцо по классу.\\
+А - кольцо, I - идел в А.\\
+A/I - фактор кольцо по иделу I.\\
+$x \in A, x+I = \lbrace x+i, i \in I \rbrace$ - класс эл-та x относ I\\
+$\lbrace x+I, x \in A \rbrace$ - мн-во всех классовю.\\
+Пример. 
+Любые два класса либо не пересекаются, либо совпадают.\\
+$c \in (x+I)\cup (y+I); c = x+i_1=y+i_2, i_3 = x-y=i_1-i_2 \in I$
+Пусть $C_1, C_2$ - два класса. Докажем, что:\\ $C_1+C_2=(x_1+x_2)+I = (y_1+y_2)+I; \\C_1 = x_1+I=y_1+I; C_2 = x_2+I=y_2+I \\ (y_1+y_2)-(x_1+x_2) = (y_1-x_1)+(y_2-x_2) \in I$\\
+$C_1C_2 =x_1x_2+I=y_1y_2+I;\\
+y_1y_2-x_1x_2 \in I; y_1y_2-x_1x_2=y_1(y_2-x_2)-y_2(y_1-x_2) \in I$\\
+$\mathbb{Z}/n\mathbb{Z} = \lbrace 0+n\mathbb{Z},... (n-1)+n\mathbb{Z} \rbrace, n$ классов,$ n \in \mathbb{Z}, n \neq 0, n>0$\\
+\textbf{Изоморфизм колец.}\\
+Гомоморфизм колец - пусть A и B - 2 кольца, f:$A \rightarrow B$\\
+f - гомоморфизм колец, если выполнены следующие равенства:
+\begin{enumerate}
+\item $\forall a_1,a_2: f(a_1+a_2) = f(a_1)+f(a_2)$
+\item $\forall a_1,a_2: f(a_1a_2) = f(a_1)f(a_2)$
+\item $f(1_a) = 1_b$
+\end{enumerate}$
+f(0)=f(0)+f(0) \Leftrightarrow f(0) = 0$\\
+$f(1)=f(1*1) = f(1)*f(1)=1 \Rightarrow f(1) = 1$\\
+Пример когда это свойство не выполнено: $\mathbb{Z} \rightarrow \mathbb{Z} \times \mathbb{Z}$\\
+Мономорфизм, это гомоморфизм: $\forall a_1,a_2 \in A: f(a_1)=f(a_2) \Rightarrow a_1=a_2$\\
+Элиморфизм: $\forall b \in B; \exists a \in A: f(a) = b$\\
+Изоморфизм - аналог биекции.\\
+\textbf{Операции над множествами.}\\
+1) Пересечение: $I_i$ - идеал в А, $\cap I_i$ - идеал в А.\\
+2) Произведение конечного числа идеалов - есть идеал.\\
+3) Сумма конечного числа идеалов - есть идеал.\\
+$\Sigma I_i = \lbrace \Sigma (\alpha_1+\alpha_2+...+\alpha_n) \rbrace$, где $\forall \alpha_i \in I_j$\\
+Сумма идеалов - это наименьший по включению идеал, содержащий все идеалы $I_i$.\\
+Произведение:$\sqcap I_i = \lbrace \Sigma x_1x_2...x_k; x_i \in I_i \rbrace$\\
+Идеалы I и J - взаимнопросты, если: I+J =(1)\\
+Пример: A - целые числа, и $(9), (8): 1 =(-1)*8+9*1$
+\subsection{Китайская теорема об остатках (КТО)}
+А - кольцо, $n>2, I_1,I_2,...I_n$ - идеалы кольца, такие что:\\ $\forall i,j i\neq j:I_i+I_j=(1)$\\
+Тогда существует изоморфизм колец $a/\cap I_i  = (A/I_1)\times (A/I_2)\times ...$\\
+Устроенный следующим образом:\\
+Класс элемента $a`(mod \cup I_i) = a`(mod I_1)a`(mod I_2)...$\\
+Проверим, что такое отображение взаимнооднозначно:\\
+1) Корректность: если классы одинаковы $a+ \cap I = a` + \cap I \Leftrightarrow a-a` = \cap I \in I$, откуда класс по модулю $I_i$ совпадает с классом по модулю $\cap I_i$.\\
+Проверим на гомоморфизм:\\
+f - гомоморфизм. $a` (mod \cap I_i), b` (mod \cap I_i): f(a`+b`)=f(a`)+f(b`)$.\\
+По определению отношения: $f(a`+b`) = f(a`+b` (mod I_1),...a`+b`(mod I_n))\\
+f(a`)+f(b`) = (a`(mod I_1),a`(mod I_2),... + b`(mod I_1),b`(mod I_2)....)$ - что то же самое.\\
+Аналогично для проивзведения и единичного элемента.\\
+Проверим, что если $a \rightarrow a`, b \rightarrow b`, a`=b` \Rightarrow a=b$\\
+Откуда наш гомоморфизм - мономорфизм.\\
+$(a`(mod I_1),a`(mod I_2)....) = (b`(mod I_1), b`(mod I_2),...)\\ A \rightarrow A/I, a\rightarrow a`(mod I)$\\ 
+Равенство покомпонентно, откуда получим:\\
+$a-b \in I_1,I_2,... \Leftrightarrow a-b \in \cap I_i \Rightarrow a` (mod \cap I_i) = b` (mod \cap I_i)$\\
+Теперь начнем доказательство КТО по индукции:\\
+n=2: $I_1+I_2 = (1), A/I_1 \cap I_2 \simeq A/I_1 \times A/I_2$
+Берём любую пару из п.ч.: $b` (mod I_1); c` (mod I_2)\\ 
+a \in A: a-b \in I_1, a-c \in I_2\\
+a=b+i_1=c+i_2 \Leftrightarrow b-c = i_2-i_1; i_1 \in I_1, i_2 \in I_2\\
+I_1+I_2 = (1); x_1+x_2 = 1 \Leftrightarrow (b-c)(x_1+x_2) = (b-c); x_1 \in I_1; x_2 \in I_2\\
+x_1(b-c)+x_2(b-c)=(b-c)$\\
+Тогда выберем $i_1 = x_1(b-c); i_2=x_2(b-c)$\\
+Лемма.\\
+Пусть $I_1,I_2...I_n$ - идеалы, такие что $I_1+I_i = (1), \forall i \geq 2$
+Тогда $I_1+ \cap I_i = (1)$\\
+Доказательство:\\
+$x_2,x_3....x_n \in I_1, y_i \in I_i: x_i + y_i = 1\\
+\sqcap (x_i+y_i)= y_2y_3...y_n \in \cap I_i+ (x_2*y_1... + .... x_ny_2...) \in I_1 = 1$\\
+Откуда по лемме: $A/ \cap I_i \simeq A/I_i \times A/\cap I_i$
+Идуктивный переход очевиден.
+\subsection{Понятие простого и максимального идеала}
+Простой идеал - это такой идеал, что: $I \neq (1); \forall x,y: xy \in I \Rightarrow x\in I \vee y\in I$\\
+Максимальный идеал - это такой идеал, что: $I \neq (1); I \in J; I\neq J \Rightarrow J = (1)$\\
+Опишем их в конце целых чисел.\\
+Теорема.\\
+\end{document}

@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage[T2A]{fontenc}
+\usepackage{amsmath}
+\usepackage{graphicx}%Вставка картинок правильная
+\usepackage{float}%"Плавающие" картинки
+\usepackage{wrapfig}%Обтекание фигур (таблиц, картинок и прочего)
+\usepackage{epstopdf}
+\usepackage{caption} %заголовки плавающих объектов
+\usepackage[unicode, pdftex]{hyperref}
+\usepackage[usenames]{color}
+\usepackage{colortbl}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsfonts}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usepackage{amssymb}
+\usepackage{blindtext}
+\usepackage{hyperref}
+\usepackage{subfig}
+\usetikzlibrary{}
+\newcommand{\eqdef}{\stackrel{\mathrm{def}}{=}}
+\captionsetup[figure]{name=Рис}
+\title{Теория МКН СПБГУ}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+{\LARGE \textbf{Теория с лекций. МатАн}}
+\end{center}
+\begin{figure}[h]
+\centering
+\end{figure}
+\end{titlepage}
+
+\begin{titlepage}
+\clearpage
+\textcolor{blue}{\tableofcontents}
+\end{titlepage}
+
+\section{Мат. Анализ}
+\subsection{Описание $\mathbb{R}$ чисел}
+\begin{enumerate}
+\item $a+(b+c) = (a+b)+c$
+\item $a+0=0+a=a$
+\item $a+(-a)=0$
+\item $a+b=b+a$
+\item $\mathbb{R} \ 0$ - абелева группа
+\item $(ab)c=a(bc)$
+\item $aa^{-1}=1$
+\item $a*1=1*a=a$
+\item $ab=ba$\\
+Теоремка. Докажем, что $0>1$\\
+Предположим, что $0 \geq 1 \Leftrightarrow -1 \geq 0 \Leftrightarrow (-1)(-1) \geq 0 \Leftrightarrow 1 \geq 0$\\
+Акиома Архимеда.\\
+$x \in \mathbb{R}, \exists n \in \mathbb{N}:x \leq n$\\
+Следствие: $x \geq 0 \wedge x \leq \frac{1}{n} \Rightarrow \forall n \in \mathbb{N}: x=0 $\\
+\end{enumerate}
+Аксиома полноты (Кантора-Дедекинда)\\
+$X,Y -$ непустые$, \in \mathbb{R}:\\
+\forall x \in X, y \in Y, x \leq y \Rightarrow \exists c \in \mathbb{R}: x \leq c \leq y$.\\
+Это порождает, например, $\sqrt{2}$\\
+X - ограничено сверху, если $\exists x_o, \forall x \in X: x \leq x_0$. Аналогично определяется ограничение снизу. $x_0$ - верхняя грань.\\
+Наименьшая верхняя грань - супремум. Наибольшая меньшая грань - инфинум.
+\subsection{Теорема о вложенных промежутках}
+$(a;b)$ - интервал или промежуток. По определению:\\
+$\forall c \in (a,b): a<c<b$ - для строго так же (лень вводить)\\
+Лемма о вложенных промежутках.\\
+Пусть $I_1,I_2,...; I_i = [a_i;b_i] \\
+I_{i+1} \in I_i$\\
+Тогда существует такое c, что $c \in \cap I$\\
+\subsection{Функция и последовательность}
+\begin{equation*}
+|x| = \begin{cases}
+x, x \geq 0 \\
+-x, x <0
+\end{cases}
+\end{equation*}
+$\forall x \in X: f(x) \in Y \\
+x,y -$числа в $\mathbb{R}\\
+f - $функция$\\
+$Если Y - числа,то f - функционал\\
+$\lbrace x_n \rbrace_{k=1}^{\infty } $ - числовая последовательность.\\
+Будем говорить, что послед имеет предел в точке a:\\
+$\forall \epsilon >0; \exists N: \forall n > N: |x_n-a|<\varepsilon$\\
+Обозначаем как: $\lim\limits_{x \to x_0} x_n = a$\\
+Определени предпоследовательности и предела на бесконечность - очевидна.\\
+Теорема.\\
+Если $x_n$ - ограничена сверху и снизу, то она сходится.\\
+Теорема Веерштрасса о монотонной последовательности.\\
+$x_n \uparrow, \forall n, \exists c; x \leq c; \forall n \Rightarrow \exists \lim\limits_{x\to \infty} x_n$
+\subsection{Пределы послеодовательности, разные определения}
+$\forall \varepsilon >0: \exists x \in X; x \neq x_0: 0<|x-x_0|<\varepsilon\\
+\forall \varepsilon >0; \exists \delta = \delta (\varepsilon):0<|x-x_0|<\delta; |f(x)-a|<\varepsilon$\\
+Предел по Коши (первое определение непонятно к чему тут, просто лектор его дал, смирись)\\
+Теперь предел по Гейне:\\
+$\lim\limits_{x\to x_0} f(x) =a \eqdef \forall x_n \in X; \lim\limits_{x \to \infty} x_n = x_0: f(x_n) = a$\\
+Доказательство равносильности определений:
+
+\end{document}
