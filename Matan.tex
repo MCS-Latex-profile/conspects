@@ -97,6 +97,121 @@ $\forall \varepsilon >0: \exists x \in X; x \neq x_0: 0<|x-x_0|<\varepsilon\\
 Предел по Коши (первое определение непонятно к чему тут, просто лектор его дал, смирись)\\
 Теперь предел по Гейне:\\
 $\lim\limits_{x\to x_0} f(x) =a \eqdef \forall x_n \in X; \lim\limits_{x \to \infty} x_n = x_0: f(x_n) = a$\\
-Доказательство равносильности определений:
-
+Доказательство равносильности определений:\\
+\textbf{(to be continued...)}\\
+\subsection{Свойства пределов и непрерывность.}
+Опр непрерывности в точке $x_0:\\
+x, x_0 \in X: \exists \lim\limits_{x \to x_0} f(x) = f(x_0)$\\
+\textbf{Арифметические действия с пределами:}\\
+\begin{enumerate}
+\item $\lim\limits_{x \to x_0} f(x) \pm \lim\limits_{x \to x_0} g(x) =\lim\limits_{x \to x_0} f(x) \pm g(x)$
+\item $\lim\limits_{x \to x_0} f(x)* \lim\limits_{x \to x_0} g(x) =\lim\limits_{x \to x_0} f(x)*g(x)$
+\item $ \frac{\lim\limits_{x \to x_0} f(x)}{\lim\limits_{x \to x_0} g(x)}  =\lim\limits_{x \to x_0} \frac{f(x)}{g(x)}; g(x_0) \neq 0 $
+\end{enumerate}
+\textbf{Доказательство первого}:\\
+$\lim\limits_{x \to x_0} f(x) = a \Leftrightarrow \forall \varepsilon >0; \exists \delta_f >0: 0<|x-x_0|<\delta : |f(x)-a|<\varepsilon $\\
+Аналогично для $g(x)$. Выберем $\delta = min(\delta_f (\frac{\varepsilon}{2}) ;\delta_g(\frac{\varepsilon}{2}))$.\\
+Тогда будет справедливо следующее соотношение:\\
+$|f(x)+g(x)-a-b|\leq |f(x)-a|+|g(x)-b|<2*\frac{\varepsilon}{2}=\varepsilon$\\
+Аналогично с двумя другими свойствами.\\
+Односторонний предел в точке $x_0$ определяется как:\\ 
+$\exists \lim\limits_{x \to x_0-} f(x) = a \Leftrightarrow \forall \varepsilon >0: \exists \delta >0: x_0\delta < x< x_0: |f(x)-a|<\varepsilon$\\
+Пределльный переход в неравенствах:\\
+$g(x) \leq f(x) \Leftrightarrow b \leq a$\\
+Доказательство:\\
+Пусть $ b>a: min(\delta_f(\frac{b-a}{2}); \delta_g(\frac{b-a}{2}) = \delta: 0<|x-x_0|<\delta:\\ |f(x)-a|<\frac{b-a}{2}; |f(x)-b|< \frac{b-a}{2}$
+Получили противоречие.\\
+\textbf{Теорема о двух копах:}\\
+$h,g,f \in D_f: f(x) \leq g(x) \leq h(x)$\\
+Если  $\exists \lim\limits_{x \to x_0} f(x) = \lim\limits_{x \to x_0} h(x) = a \Leftarrow \exists \lim\limits_{x \to x_0} g(x) = a$\\
+Доказательство:\\
+$\delta = min(\delta_1(\varepsilon);\delta_2(\varepsilon)): |x-x_0|<\delta: f(x),g(x) \in (a-\varepsilon;a+\varepsilon) \Rightarrow g(x) \in (x_0-\varepsilon; x_0+\varepsilon)$\\
+Аналогично теорема о копах для последовательностей.\\
+\subsection{Сходимость в себе}
+Опр. $\lbrace x_n \rbrace_{n=1}^{\infty}: \forall \varepsilon >0; \exists N: \forall n,m > N: |x-x_m|<\varepsilon$\\
+\textbf{Теорема.}\\
+$\lbrace x_n \rbrace_{n=1}^{\infty}$ - сходится$\Leftrightarrow \lbrace x`_n \rbrace_{n=1}^{\infty}$
+Доказательство:
+Прямое утверждение очевидно.\\
+Докажем обратное: $\varepsilon = \frac{1}{2^n}, n\in \mathbb{N}: |x_n-x_m|<\frac{1}{2^n}$.\\
+Зафиксируем n. Тогда любые точки лежат $(x_n-\frac{1}{2^n};x_n+\frac{1}{2^n}) - I_n\\
+|I_n| \to 0, n \to \infty$\\
+Добъемся вложения интервалов $J_k = \cap I_i; J_k \neq \oslash \Rightarrow J_k$ - интервал. По построению $J_k+1 \in J_k. \exists a \in J_i \forall i: a$-кандидат на предел. (воспользовавшись аксиомой полноты)\\
+$\forall \varepsilon >0; \exists N \forall n > N: |x_n-a|<\varepsilon$\\
+Аналогично можно определить сходимость функций в себе.\\
+\textbf{Теорема}\\
+f(x) - сходится в себе $\Leftrightarrow \lim\limits_{x \to x_0} f(x)$\\
+Далее рассмотрим гармонический ряд.\\ Доказательство его расходимости очевидное.\\
+Аналогично рассмотрим $\xi (n)$ и получим, что при n>1 она сходится. Доказательство тривиально.\\
+\subsection{Непрерывность функций}
+Непрерывность функции мы уже определяли, определим теперь разрыв I и II рода.\\
+Разрыв I рода:\\
+$\exists \lim\limits_{x \to -x_0} f(x) \neq \lim\limits_{x \to x_0+} f(x) = a$\\
+\textbf{Опр.} $x_0$ - устранимая особенность $\lim\limits_{x \to x_0} f(x) = f(x_0)$\\
+Разрыв II рода. $\lim\limits_{x \to -x_0} f(x) \neq f(x_0);\lim\limits_{x \to -x_0} f(x) \neq \lim\limits_{x \to x_0+} f(x); a \neq  \lim\limits_{x \to x_0+} f(x)$\\
+\textbf{Свойство непрерывности:}\\
+f, g - непрерывны на $E_{f,g}$
+\begin{enumerate}
+\item $\alpha f + g\beta$ - непрерывны там же
+\item $fg$ - непрерывны там же
+\item $g(x)\neq 0 \forall x \in D_f: \frac{f}{g}$- непрерывны
+\item $f \o g(x)$ -непрерывны
+\end{enumerate}
+Док-во ласт утверждения:\\
+$x_0$ - предельная точка $g(x); f$ - непрерывна в $g(x_0) \Rightarrow f(g(x))$- непрерывна\\
+$\forall \varepsilon >0: \exists \delta: 0<|x-x_0|<\delta: |f(g(x))-f(g(x_0))|< \varepsilon\\
+\forall \varepsilon >0: \exists \delta_1: 0<|g(x)-g(x_0)|<\delta_1:|f(y)-f(g(x_0))|<\varepsilon\\
+\forall \varepsilon >0: \exists \delta_2: 0<|x-x_0|<
+\delta_2: |g(x)-g(x_0)|<\varepsilon$\\
+\textbf{Мини-следствия:}\\
+1) $P(x) = \Sigma a_ix^i$ - непрерывна\\
+2) $R(x) = \frac{P(x)}{Q(x)}; Q(x) \neq 0$ - непрерывна\\
+Свойства:\\
+\textbf{Теорема Веерштрасса (I)}\\
+f(x) - непрерывна на [a,b], значит f - ограничена.\\
+Доказательство.\\
+Пусть f(x) - неограничена на промежутке. Тогда:\\
+$\forall n \exists x_n: f(x_n)>n\\
+x_{n_k} \to x_0 \in [a,b];\lim\limits_{x \to x_0} f(x) = f(x_0) = \lim\limits_{k \to \infty} f(x_k) = \infty$\\
+\textbf{Теорема Веерштрасса (II)}\\
+Пусть B непрерывна на [a,b], тогда она достигает своего максимума и минимума, т.е.:
+$\exists x_0: f(x_0) \geq f(x), \forall x \in [a,b]\\
+\exists y_0: f(y_0) \leq f(x), \forall y \in [a,b]$\\
+Посмотри на образ x=[a,b]- оно ограничено.\\
+Если X - ограничена сверху $\Rightarrow \exists x_0: Sup(X)=x_0$\\
+Если $x_0 \in X \Rightarrow \exists y_0: y_0 = f(x_0)$\\
+Если нет, то $\exists y_n \to y_0, y_n \in Y; y_n = f(x_n): \exists x_n: \lbrace x_n \rbrace^{\infty}, x_{n_k} \to x_0$\\
+По непрерывности: $f(x_{n_k}) \to f(x_0) = y_0 | \Rightarrow y_0 \in Y$\\
+\textbf{Теорема}\\
+f(x) непрерывна на [a,b] если $\forall c \in [f(a),f(b)]; \exists x_0:f(x_0) = c; f(a) \leq f(b)$\\
+Осуществляем бин поиск точки c. Откуда и получаем непрерывность.\\
+Теорема.\\
+f - непрерывна на [a,b] и f - инъективна, значит либо f(x)возрастает, либо убывает.\\
+Посмотрим на f(a) и f(b), $a \neq b \Rightarrow a>b \wedge a<b.$\\
+\begin{equation}
+\begin{cases}
+f(x_1)>f(x_2)\\
+x_1<x_2
+\end{cases}
+\end{equation}
+Значит, если она вначале убывает, потом возрастает, то будет два значения, чуть больших минимального, что противоречит инъективности.\\
+\textbf{Лемма}\\
+Построим Канторову лестницу. Зададим функции следующим образом. f(0) = 0; f(1) = 1. Будем делить отрезок на 3 равные части, на средней из них, она равна среднему арифметическому от значений на концах отрезка. Таким образом получим непрерывную возрастающую функциию.\\
+Можем задать ее так же следующим образом. В средний промежуток попадают числа, которые в троичной системе имееют единицу в разряде.\\
+\subsection{Производная}
+Введем понятие $o$ и $O$\\
+$\lim\limits_{x \to x_0} \frac{f(x)}{g(x)} = 0$\\
+$f(x) = O(g(x)); x \to x_0: \exists c: |f(x)|\leq c|g(x)| в x \in \delta$ окрестности.\\
+$f(x) = f(x_0)+o(1)$ - непрерывна.\\
+$f(x) = A+Bx+o(x-x_0) x \to x_0;\\
+A+Bx = f(x_0)+D(x-x_0); f(x) = f(x_0)+D(x-x_0)+o(x-x_0)$\\
+Если $\exists \lim\limits_{x \to x_0} \frac{f(x)-f(x_0)}{x-x_0} = D; D = f`$;
+$f(x) = f(x_0)+f`(x_0)(x-x_0)+o(x-x_0)$\\
+\textbf{Св-ва производной:}\\
+\begin{enumerate}
+\item $(\alpha f(x)+ \beta g(x) = \alpha f`(x) + \beta g`(x)$
+\item $(f(x)*g(x))`=f`(x)*g(x)+g`(x)*f(x)$
+\item $(\frac{f(x)}{g(x)})`=\frac{f`(x)*g(x)-g`(x)*f(x)}{g^2(x)}$
+\item $f(g(x))`=f`(g(x))*g`(x)$
+\end{enumerate}
 \end{document}
