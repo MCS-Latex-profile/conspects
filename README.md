@@ -1,5 +1,5 @@
-# Конспекты
-Конспекты за первые 4 семестра 2024-2028 год
+#### Конспекты за первые 4 семестра 2024-2028 год
+
 Собственно конспекты:
 # 1) [Матанализ (Белов)](https://github.com/MCS-Latex-profile/conspects/blob/main/Matan.pdf)
 # 2) [Дискретная математика (Пузынина)](https://github.com/MCS-Latex-profile/conspects/blob/main/Discr_math.pdf)
