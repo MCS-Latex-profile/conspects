@@ -203,4 +203,134 @@ $x_2,x_3....x_n \in I_1, y_i \in I_i: x_i + y_i = 1\\
 Максимальный идеал - это такой идеал, что: $I \neq (1); I \in J; I\neq J \Rightarrow J = (1)$\\
 Опишем их в конце целых чисел.\\
 Теорема.\\
+$\forall I_{max} -$ простой.
+Доказательство.\\
+$x,y \notin I \Rightarrow xy \notin I\\
+I \subsetneq I + (x) \Rightarrow I+(x)=(1); I+(y)=(1)$\\
+$i_1+ax=1\\
+i_2+by=1, a,b \in A\\
+i_1i_2+byi_1+axi_2+abxy=1 (\alpha)$\\
+Если $xy \in I$. Но тогда $\alpha \in I \Rightarrow 1 \in I \Rightarrow I =(1)$\\
+Противоречие, значит $xy \notin I$\\
+Если $A = \mathbb{Z}; (a)$ - максимальные идеалы. Если $a \neq 0$ - то идеал не максимальный. $a \neq 1$ - не максимальный.\\
+$a \geq 2$
+\begin{enumerate}
+\item Если a - составное, то a = bc, где b,c$\neq$1. Значит идеал не максимальный $(a)\varsubsetneq (b)$
+\item a - простое; a = p. Тогда идеал максимальный. $(p)\subset I \subset \mathbb{Z}$
+\end{enumerate}
+Чтобы доказать, что он максимальный, нужно доказать, что он не совпадает с $x \in I; x \neq kp;\\
+(p) \subset (p)+(x); (x)+(p) = (b) \Rightarrow p \vdots b; x \vdots b \Rightarrow b =p \wedge b=1$\\
+Если b=1, то доказано. Если b=p: $(x) \vdots p$- что противоречит условию.\\
+Предложение.\\
+$I \subset A\\
+1) I$ - простое $\Leftrightarrow A/I$ - целостное.
+2) I - макс $A/I$ - поле.
+\subsection{Евклидовы кольца}
+A - целостное, $\exists f(A\lbrace 0 \rbrace )\Rightarrow \mathbb{Z}_0^+;\\
+a \rightarrow ||a||; \forall a,b \in A, b\neq 0: \exists q,r \in A: a = bq + r, r =0 \vee r\neq 0; ||r||<||b||$\\
+Пример.\\
+A - кольцо целых чисел, ||b||=|b|.\\
+Иногда в опр включают ||ab||$\geq$||a||\\
+Теорема.\\
+$\forall$ евклидова кольца - является кольцом главных идеалов.\\
+Доказательство:\\
+Пусть I - ненулевой идеал; $a \in I:\\
+||a|| = min ||i||; i\in I`\lbrace \rbrace$\\
+Возьмем $i \in I; i = aq+r$ r - остаток при делении а на b.\\ 
+$r \neq 0: r = i-aq \in I; ||r||\leq ||a||$ - противоречие.\\
+$I \subset (a) \Rightarrow I = (a)$\\
+Пример.\\
+$A = \frac{a+b\sqrt{-19}}{2}; a,b \in \mathbb{Z}; a \equiv b (mod 2)$\\
+Кольцо главных идеалов, но не евкидово.\\
+\subsection{Факториальное кольцо}
+A - область целостности. a - обратимый, если $\exists b \in A: ab=1; a \in A$ - неразложимый элемент, если:\\
+1) a - необратимый\\
+2) $a=bc \Leftarrow b \vee a$ - обратимые.\\
+(a) - простой, тогда a - неразлодимый элемент.\\
+$a=bc \in (a) \Rightarrow b \in (a) \vee c \in (a)\\
+b = ad \Rightarrow a=adc; a(1-dc)=0; cd = 1 \Rightarrow c - $обратимо\\
+Опр.\\
+Область целостности A - факториальное кольцо, если $\forall a \neq 0 \in A:$\\
+1) Существует разложение $a=up_1p_2..., p_i$  -неразложимые, u - обратимое.\\
+2) Если существует 2 разложения: $a=up_1p_2...p_n=vq_1q_2...q_m, $ тогда n=m; Существует взаимнооднозначное отображение $(1,2,...,n)\rightarrow (1,2,...m)$\\
+Теорема.\\
+Любое кольцо главных идеалов - факториальное.\\
+$(x,y) \subset k[x,y]\\
+\exists$ разложение$0 \neq a; a=up_1p_2...p_n$
+Доказательство.\\
+Предположим для элемента а такого разложения не существует.\\
+$(a) \subset (a_1) \subset ... \subset (a_n), a_i \in A$\\
+---\\
+Лемма.\\
+Такая цепочка со временем стабилизируется, т.е. начиная с некоторого i все они совпадают.\\
+$\exists n: (a_n)=(a_{n+1})=...$\\
+Доказательство.\\
+$\cup (a_k)$ - идеал.\\
+$x,y \in \cup (a_i)$, будем считать, что они принадлежит одному идеалу.\\
+$x \in (a_k);y \in (a_s), k\in s \Rightarrow x,y \in (a_i) \Rightarrow x+y \in (a_i)$\\
+Любой идеал главный $\Rightarrow \cup (a_i) = (b) \Rightarrow b \in (a_k) \Rightarrow (b) \subset (a_k) \subset (b) \Rightarrow (b)=(a_k)$\\
+Получили, что: $(a) \subset (a_1) \subset.... \subset(a_k)=(a_{k+1})=... $\\
+---\\
+Вернемся к док-ву.\\
+a - неразложимый, значит он представим в виде bc, где b,c -необратимы, и один из них неразложим.\\
+Пусть b - неразложим.\\
+Сравним главные идеалы a и b: $(a) \varsubsetneq (b)$. Иначе получили бы a=adc, откуда получили бы, что c - обратимый.\\
+Построим идеал строго больший a. Тогда мы аналогично смогли бы построить $(a)\varsubsetneq (a_1)\varsubsetneq ...$, что противоречит лемме.\\
+Докажем, что разложение единственно.\\
+$a=up_1p_2...p_n=vq_1q_2...q_m$\\
+Проведем индукцию по количеству элементов в правой части.\\
+База: m=0 - очевидно.\\
+m>0: $q_m \Rightarrow up_1p_2...p_n \in (q_m)$\\
+Докажем, что $(p_m)$ - простой.\\
+Пусть $\pi$ неразложимый элемент элемент $\Rightarrow (\pi)$- простой.\\
+Проверим: пусть $xy\in (\pi); (\pi;x);x\notin \pi = (a)\\
+\pi \vdots a \Rightarrow \pi = ab, \pi -$ неразложимый$\Rightarrow a \vee b$ - обратимы.\\
+Если b - обратимо, то $(\pi) = (a) \Rightarrow (\pi, x) = (a)$ противоречие\\
+Если a - обратиый, то $(a)=(1) \Rightarrow (\pi,x)=(1)\\
+\alpha \pi + \beta x =1 /*y \Leftrightarrow \alpha y \pi + \beta xy=y \Rightarrow y\in \pi$\\
+Что и требовалось$\Rightarrow p_n \in (q_m)\\
+p_n = q_m*u_m$.\\
+Получаем резуьтат (Евклидовы кольца)$\subset$(Кольца главных идеалов)$\subset$(факториальные кольца)
+\subsection{Разложение простых на сумму квадратов}
+Задача. Выяснить какие $p = a^2+b^2$ и в каких случаях оно единственно?\\
+Предложение.\\
+Кольцо $\mathbb{Z}[i] = \lbrace a+bi\rbrace, где a,b \in \mathbb{Z}; i = \sqrt{-1}$, евклидово относительно $||u+iv||=u^2+v^2$\\
+$a+bi;c+di\neq 0 \in \mathbb{Z}[i];\\
+(a+bi)\neq k(c+di), k\in \mathbb{Z}$\\
+Рассмотрим комплексное число:\\
+$\frac{a+bi}{c+di}=\alpha + \beta i$. Т.к. $a,b,c,d \in \mathbb{Z} \Rightarrow \alpha, \beta \in \mathbb{Q}$;\\
+$|\alpha - |\alpha|\leq 0; |\alpha|$- тут, это окрукгление, т.е.$\alpha \in [m;m+1] \Rightarrow \exists u:|u-\alpha|\leq 0,5$.\\
+Аналогично определим v для $\beta$.\\
+$a+bi=(\alpha + \beta i)(c+ di)=(c+di)(u+vi)+(c+di)((\alpha-u)+(\beta - u)i)\\
+||(c+di)((\alpha-u)+(\beta - v)i))||=||c+di||*||(\alpha-u)+(\beta-v)i||=\\
+=(c^2+d^2)((\alpha-u)^2+(\beta-v)^2)\leq (c^2+d^2)*\frac{1}{2}=\frac{||c+di||}{2}<||c+di||$\\
+Откуда получаем,что кольцо евклидово, и из вышедоказанного, что оно факториальное.\\
+Возьмем произвольное число вида 4k+1=p и посмотрим будет ли оно простым в кольце.\\
+p - простое. $p\mathbb{Z}=(p) - max$ идеал\\
+$\mathbb{Z}/p\mathbb{Z}$- поле. Докажем это:\\
+Вощьмем ненунлевой остаток такой, что при домножении на него получаются ненулевые и попарно различные остатки. То что они не нулевые следует из факториальности.\\
+Берем $\overline{k_1a}=k_2\overline{a} \Leftrightarrow \overline{a}(\overline{k_1}-\overline{k_2})\vdots p \Leftarrow k_1-k_2 \vdots p \Leftarrow k_1=k_2$\\
+---\\
+Докажем теорему Вильсона.\\
+p - простое $\Rightarrow (p-1)!+1 \vdots p$\\
+Возьмем $p\geq 5 \overline{a} \in \lbrace \overline{2},...,\overline{p-2} \rbrace = P_k\\
+\overline{a}-\overline{b}=\overline{1};$ Выкинем такую пару остатков a и b. Проделаем эту итерацию так, что в итоге получится:\\
+$P_k = \cup (a_i;b_i) \Rightarrow \sqcap \overline{a_i}=\overline{1}; \overline{p-1} = \overline{-1}\\
+\sqcap \overline{a_i} = 1*(-1)=-1 \Rightarrow (p-1)!+1 \vdots p$.\\
+---\\
+Пусть p = 4k+1; Разделим его остатки следующим образом: $\overline{(1)},.. \overline{(\frac{p-1}{2})},..., -\overline{(\frac{p-1}{2})}$\\
+При перемножении получим 1, т.к. их количество четное.  По т.Вильсона:\\
+$(\frac{p-1}{2})!+1 \vdots p$\\
+Пусть $(\frac{p-1}{2})! = x; x^2+1 \vdots p$\\
+Мы нашли x удовлетворяющее условию $(x-i)(x+i) \vdots p \in \mathbb{Z}[i] \Rightarrow p $ неразложимое\\
+Пусть:\\
+$p=(a+bi)(с+di)\\
+p=(a-bi)(c-di)\\
+p^2 = (a^2+b^2)(c^2+d^2) \Leftrightarrow (a^2+b^2=p)\vee (c^2+d^2=p)$. Т.к. не один из множетелей не равен 1, иначе p был бы обратимым. Т.е. получили, что и хотели:\\
+$p=a^2+b^2=c^2$\\
+Проверим единственность представления.\\
+$p=(a+bi)(a-bi)=(c+di)(c-di)$ где множители неразложимы.\\
+Пусть $a+bi$ раскладывается в 2 необратимых элемента, тогда анологично получаем:\\
+$a^2+b^2 = (r^2+s^2)(\overline{r^2}+\overline{s^2})$ - противоречие.\\
+Значит, получаем, что: $(a+bi)=(c\pm di)*u, u\in \lbrace \pm 1;\pm i\rbrace$
 \end{document}
