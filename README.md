@@ -1,5 +1,6 @@
 # Конспекты за первые 4 семестра 2024-2028 год
-##![fmkn](https://github.com/user-attachments/assets/e3b70ff8-c67e-4483-937b-d64bc743fb01)
+![vRW-BQDVVMs](https://github.com/user-attachments/assets/9ebe1081-d2ff-4129-98f5-816c3dca3ed6)
+
 
 Собственно конспекты:
 ## 1) [Матанализ (Белов)](https://github.com/MCS-Latex-profile/conspects/blob/main/Matan.pdf)
