@@ -13,9 +13,11 @@
 
 ## 5) Мат. основы алгоритмов - чтобы не искать ссылки, они будут тут: 
 
-  а) https://tsweb.ru/t/ (Тестер)
+  а) [Тестер](https://tsweb.ru/t/)
   
-  б) https://tsweb.ru/spbsu/bachelor-2024/ (Лекции)
+  б) [Лекции](https://tsweb.ru/spbsu/bachelor-2024/)
+
+  в) [Примеры кода](https://tsweb.ru/spbsu/bachelor-2024/240917_b24/)
 
 ## 6) [Физкультура](https://timetable.spbu.ru/Events/PhysTraining)
 
