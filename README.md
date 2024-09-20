@@ -2,7 +2,7 @@
 ![vRW-BQDVVMs](https://github.com/user-attachments/assets/9ebe1081-d2ff-4129-98f5-816c3dca3ed6)
 
 
-Собственно конспекты:
+Собственно конспекты (обновляются в течении 3х дней после лекции по предмету):
 ## 1) [Матанализ (Белов)](https://github.com/MCS-Latex-profile/conspects/blob/main/Matan.pdf)
 ## 2) [Дискретная математика (Пузынина)](https://github.com/MCS-Latex-profile/conspects/blob/main/Discr_math.pdf)
 ## 3) [Основы теории множеств (Селиванов)](https://github.com/vseliv/Sets-2024-1)
