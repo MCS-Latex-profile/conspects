@@ -19,6 +19,8 @@
 
   в) [Примеры кода](https://tsweb.ru/spbsu/bachelor-2024/240917_b24/)
 
+  г) [Библиотека по с++](https://en.cppreference.com/w/cpp/algorithm), и [еще одна](https://www.cplusplus.com/reference/algorithm/) 
+
 ## 6) [Физкультура](https://timetable.spbu.ru/Events/PhysTraining)
 
 ### Ваши пожелания, угрозы, предложения можете направить сюда - https://t.me/text_text_0
