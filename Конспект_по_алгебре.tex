@@ -1,0 +1,1012 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage[T2A]{fontenc}
+\usepackage{xcolor}
+\usepackage{rotating}
+\usepackage{tikz}
+\usepackage{mathtools}
+\usepackage[bottom]{footmisc}
+\usepackage{MnSymbol}
+\usepackage{mathrsfs}
+\usepackage{graphics}
+\usepackage{svg}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{amsmath,amsthm, dsfont, amsfonts}
+\usepackage{comment}
+\usepackage{faktor}
+\usepackage{amsthm}
+\usepackage{enumitem}
+\usepackage{cancel}
+\newcommand{\gt}{\textgreater} 
+\newcommand{\lt}{\textless}
+\newcommand{\bigscl}{\big{(}}
+\newcommand{\bigscr}{\big{)}}
+\newcommand{\rightarea}{\mathcal{O}_{\text{пр}}}
+\newcommand{\re}{\mathds{R}}
+\newcommand{\ri}{\overline{\re}}
+\newcommand{\qu}{\mathds{Q}}
+\newcommand{\epsarea}{\mathcal{O}_\varepsilon}
+\newcommand{\delarea}{\mathcal{O}_\delta}
+\newcommand{\Marea}{\mathcal{O}_M}
+\newcommand{\baza}{\mathscr{B}}
+\newcommand{\bgot}{\mathscr{D}}
+\newcommand{\nat}{\mathds{N}}
+\newcommand{\es}{\text{если:}}
+\newcommand{\lra}{\Leftrightarrow}
+\newcommand{\Ups}{\mathcal{U}}
+\newcommand{\ra}{\;\Rightarrow\;}
+\newcommand{\la}{\Leftarrow}
+\newcommand{\hatarea}{\hat{\mathcal{O}}_\text{пр}}
+\newcommand{\Tildearea}{\Tilde{\mathcal{O}}_\text{пр}}
+\newcommand{\ce}{\mathds{C}}
+\newcommand{\Z}{\mathds{Z}}
+\newcommand{\J}{\mathcal{J}}
+\newcommand{\Dar}[1]{\operatorname{D}_{#1}}
+\newcommand{\m}{\leqslant}
+\newcommand{\bo}{\geqslant}
+\newcommand{\norm}[1]{\left \lVert #1 \right \rVert}
+\newcommand{\RNumb}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+\newcommand{\anonsection}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\cl}[1]{\overline{#1}}
+\newcommand{\nd}{\;\cancel{\vdots}\;}
+\newcommand{\de}{\;\vdots\;}
+\newcommand{\NoD}[2]{\text{НОД}({#1},{#2})}
+\newcommand{\myfac}[2]{\raisebox{.75ex}{$#1$}\raisebox{-.3ex}{$/$}_{#2}}
+% \renewcommand{\labelenumi}{\Roman{enumi}.}
+% \renewcommand{\labelenumii}{\arabic{enumii}.}
+% \renewcommand{\labelenumiii}{\arabic{enumiii}.}
+% \renewcommand{\labelenumiv}{ (\alph{enumiv})}
+
+%\usepackage[unicode, pdftex]{hyperref} % подключаем hyperref
+
+%навигация по файлу
+
+\usepackage{color} % подключить пакет color
+% выбрать цвета
+\definecolor{BlueGreen}{RGB}{0,131,214}
+\definecolor{Violet}{RGB}{0,131,214}
+% назначить цвета при подключении hyperref
+\usepackage[unicode, colorlinks, urlcolor=BlueGreen, linkcolor=Violet, pagecolor=Violet]{hyperref}
+
+\oddsidemargin=-0.1in 
+\evensidemargin=-0.1in 
+\textwidth=6.6in
+\topmargin=-0.5in 
+\textheight=9.1in
+
+
+
+
+
+
+
+
+
+\theoremstyle{plain}
+\newtheorem*{Th*}{Теорема}
+\newtheorem{Def}{Определение}
+\newtheorem*{Lemma*}{Лемма}
+\newtheorem*{Property*}{Свойство}
+\newtheorem*{Proposition*}{Предложение}
+\newtheorem*{Corollary*}{Следствие}
+\newtheorem*{Statement*}{Утверждение}
+\theoremstyle{definition}
+\newtheorem*{Remark*}{Замечание}
+\newtheorem*{Designation*}{Обозначение}
+\newtheorem*{Example*}{Пример}
+\newtheorem*{Problem*}{Задача}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+    \bf{Факультет математики и компьютерных наук –- 2024 - 2025}
+\end{center}
+\vspace{18mm}
+\rule[0.5ex]{\linewidth}{2pt}\vspace*{-\baselineskip}\vspace*{3.2pt} 
+\rule[0.5ex]{\linewidth}{1pt}\\[6mm] 
+{ \sc \centerline{\huge Конспект по Алгебре}}\\[5mm] 
+\rule[0.5ex]{\linewidth}{1pt}\vspace*{-\baselineskip}\vspace{3.2pt} 
+\rule[0.5ex]{\linewidth}{2pt}\\ 
+\vspace{5mm}
+\begin{center}
+    \Huge{Фёдоров Павел\\}
+    \vspace{6mm}
+    
+    {\small 1 курс МКН, Санкт-Петербург}
+
+\newpage
+
+\Large
+\hypertarget{p35}{}
+\begin{tabular}{ccccc}
+ Лекция \hyperlink{p1}{04.09.24} & Лекция \hyperlink{p7}{25.09.24} & Билет \hyperlink{p13}{13} & Билет \hyperlink{p19}{19} & Билет \hyperlink{p25}{25}\\
+ Лекция \hyperlink{p2}{06.09.24} & Лекция \hyperlink{p8}{27.09.24} & Билет \hyperlink{p14}{14} & Билет \hyperlink{p20}{20} & Билет \hyperlink{p26}{26}\\
+ Лекция \hyperlink{p3}{11.09.24} & Билет \hyperlink{p9}{9} & Билет \hyperlink{p15}{15} & Билет \hyperlink{p21}{21} & Билет \hyperlink{p27}{27}\\
+ Лекция \hyperlink{p4}{13.09.24} & Билет \hyperlink{p10}{10} & Билет \hyperlink{p16}{16} & Билет \hyperlink{p22}{22} & Билет \hyperlink{p28}{28}\\
+ Лекция \hyperlink{p5}{18.09.24} & Билет \hyperlink{p11}{11} & Билет \hyperlink{p17}{17} & Билет \hyperlink{p23}{23} & Билет \hyperlink{p29}{29}\\
+ Лекция \hyperlink{p6}{20.09.24} & Билет \hyperlink{p12}{12} & Билет \hyperlink{p18}{18} & Билет \hyperlink{p24}{24} & Билет \hyperlink{p30}{30}\\
+\end{tabular}
+\end{center}
+
+\normalsize
+\hypertarget{p1}{}
+\section*{04.09.24}
+\subsection*{Определение кольца}
+Пусть имеется не пустое множество $A$ и две операции (сложение и умножение). Тогда тройка вида $(A, +, \cdot)$ будет называться кольцом, если выполнены следующие аксиомы.
+\begin{enumerate}
+    \item $\forall a,b,c \in \re \;\;\;(a+b)+c = a+(b+c)$ --- ассоцитативность по сложению
+    \item $\exists 0 \in \re\;\;\; \forall a\in \re\;\;\; a+0=0+a=a$ --- наличие нейтрального элемента по сложению
+    \item $\forall a \in \re \;\;\; \exists b\in\re \;\;\; a+b=b+a=0$ --- Наличие обратного элемента по сложению
+    
+    
+    \begin{Statement*}
+        Если ноль существует, то он единственный.
+    \end{Statement*}
+    \begin{proof}
+        Пусть существуют два ноля: $0,0'$. Тогда рассмотрим следующую сумму:
+        $0 = 0 + 0' = 0'$
+    \end{proof}
+    
+    \item $\forall a,b \in \re \;\;\; a+b = b+a$ --- коммутативность по сложению
+    \item  $\forall a,b,c \in \re \;\;\;(a+b)c = ac+bc$ --- дистрибутивность(правая, но есть коммутативность, поэтому и левая)
+    \item $\forall a,b \in \re \;\;\; ab = ba$ --- коммутативность по умножению
+    \item  $\forall a,b,c \in \re \;\;\;(ab)c = a(bc)$ --- ассоцитативность по умножению
+    \item  $\exists 1 \in \re\;\;\; \forall a\in \re\;\;\; a\cdot1=1\cdot a=a$ --- Наличие нейтрального элемента по умножению
+    \item  $\forall a \in \re \;\;\; \exists a^{-1}\in\re \;\;\; a(a^{-1})=1$ --- Наличие обратного элемента по умножению
+        
+\end{enumerate}
+Если выполнены свойства 1-5, то данная структура называется кольцом. Если выполнена свойтсва 1-8, то структура наывается ассоциативным кольцом с единицей, а если 1-9, то структура называется полем.
+\subsection*{Примеры колец}
+\begin{itemize}
+    \item $(\Z,+,\cdot)$ -- кольцо целых чисел
+    \item $(0,+,\cdot)$ -- тривиальное кольцо
+    \item Следующий пример слегка интереснее. Пусть $d\in \nat\;\;\;\sqrt[]{d}\notin \Z$
+            \\
+            $\Z[\sqrt{d}] = \{a+b\sqrt{d}| a \in \Z, b \in \Z\}$\\
+            Определим операции следующим образом: \\$(a_1+b_1\sqrt{d})+(a_2+b_2\sqrt{d}) = (a_1+a_2)+(b_1+b_2)\sqrt{d}$\\
+            $(a_1+b_1\sqrt{d})\cdot(a_2+b_2\sqrt{d}) = (a_1a_2+b_1b_2d)+(a_1b_2+b_1a_2)\sqrt{d}$
+\end{itemize}
+Эти три примера являются самыми типичными примерами колец. А теперь перейдём к примерам колец, которые являются полями.
+\begin{itemize}
+    \item ($\qu, +, \cdot$) -- Поле рациональных чисел
+    \item ($\re, +, \cdot$) -- Поле вещественных чисел
+    \item ($\ce, +, \cdot$) -- Поле комплексных чисел
+\end{itemize}
+Также, пусть $A,B$ -- кольца. Тогда $A\times B$ -- Прямое произведение, тоже кольцо.
+\begin{Proposition*}
+    $x_1\cdot x_2\cdot...\cdot x_n$ -- не зависит от расстоновки скобок
+\end{Proposition*}
+\begin{proof}
+    Воспользуемся методом математической инукции.
+    \\
+    \textbf{База:} $n=3$ -- простая ассоциативность по умножению\\
+    \textbf{Переход:} Будем называть произведение левонормированным, если его можно представить, как $((((x_1x_2)x_3)x_4)x_5...)$.\\
+    Рассмотрим число $k$ -- это номер, такой что $x_1\cdot...\cdot x_k$ левонормированно. Тогда рассмотрим два случая.
+    \begin{enumerate}
+        \item   $k=n-1$. Тогда всё очевидно
+        \item   $k<n-1$. Тогда вынесем $x_n$ за всё произведение и сново получим слева левонормированное произведение.
+    \end{enumerate}
+\end{proof}
+\begin{Remark*}
+    $(-ab) = (-a)b$
+\end{Remark*}
+\begin{proof}
+$(-a)b + ab = 0\cdot b = (0+0)\cdot b = 0\cdot b+0\cdot b = 0$(сократим на $0\cdot b$)\\
+$-(ab)+ab = 0$
+\end{proof}
+\subsection*{Определение Идеала Кольца}
+\begin{Def}
+    Не пустое $I\subseteq A$. Тогда $I$ называется идеалом кольца, если 
+    \begin{enumerate}
+        \item $x,y \in I\; \ra\; x+y \in I$
+        \item $x \in I \; \&\; a\in A\; \ra \; ax\in I$
+    \end{enumerate} 
+
+\end{Def}
+Заметим, что если $1\in I$, то в идеале содержится любой элемент множества $A$. Тогда $I = A$.
+Кроме того, по очевидным размышлениям, $0\in I$.\\\\
+$(0) = \{0\}$ -- нулевой идеал\\
+$I = A$ -- единичный идеал
+\subsection*{Идеалы целых чисел}
+\begin{Th*}
+Все идеалы множества $\Z$ представимы в виде $k\Z$
+\end{Th*}
+\begin{proof}
+    Пусть имеется не нулнвой идеал $I$, тогда в нём существуют не нулевые и положительные числа. Пусть $k$ - наименьший такой элемент
+    \begin{enumerate}
+        \item[$\subseteq:$] Рассмотрим элемент из идеала $I$. Тогда $x=kq+r$, где $0\m r<k$. Заметим, что $r = x-kq\in I\ra r =0\ra$ любой элемент является элементом $k\Z$
+        \item[$\supseteq:$] Очевидно 
+    \end{enumerate}
+
+\end{proof}
+\subsection*{Ещё примеры идеалов}
+Пусть $a_1,a_2,a_3,...,a_n \in A$, тогда обозначим за $(a_1,a_2,a_3,...,a_n) = \{\sum\limits_{i = 1}^na_ix_i|x_i\in A\}$. Это идеал. Проверим
+\begin{enumerate}
+    \item $\sum\limits_{i = 1}^na_ix_i + \sum\limits_{i = 1}^n a_iy_i = \sum\limits_{i=1}^n a_i(x_i+y_i)$
+    \item $b\sum\limits_{i=1}^na_ix_i = \sum\limits_{i=1}^na_ibx_i \in (a_1,a_2,a_3,...,a_n)$
+\end{enumerate}
+Оба предложения верны, поэтому это действительно идеал.
+\hypertarget{p2}{}
+\section*{06.09.24}
+\begin{Def}
+Ненулевое кольцо называется \textbf{областью целостности}, если у него нет делителей нуля. Иными словами, если $ab = 0 \lra a=0 \vee b = 0$
+\end{Def}
+\subsection*{Примеры}
+\begin{itemize}
+    \item $\Z$ -- является областью целостности
+    \item Любое поле является областью целостности
+    \item $\Z[\sqrt{d}]$ -- является областью целостности
+    \item $A\times B = \{(a,b)|a\in A, b\in B\}, A\neq \emptyset, B\neq \emptyset$ -- НЕ является областью целостности.
+\end{itemize}
+\begin{Def}
+    Идеал называется \textbf{главным}, если он порождён одним элементом. $I = (a), a \in A$
+\end{Def}
+\begin{Def}
+    Область целостности, в которой любой идеал главный называется \textbf{кольцом главных идеалов}
+\end{Def}
+Заметим, что если кольцо является полем, то все идеал либо нулевой, либо единичный, так как есть обратный по умножению.
+\\
+Вопрос, который из всего этого возникает, а есть ли область целостности, не являющаяся кольцом главных идеалов.
+\\
+Рассмотрим следующее множество: $\Z[\sqrt{-5}] = \{a+b\sqrt{-5}| a \in A, b\in B\}$. \\
+Рассмотрим следующее множество: $I = \{a+b\sqrt{-5}| a\in A, b\in B, (b-a)\vdots 2\}$ 
+\\
+Простой проверкой в лоб можно понять, что это множество замкнуто относительно сложения и умножения, а также, что оно удовлетворяет обоим свойтсвам идеала. Поэтому $I$ -- идеал $A$.
+Теперь надо проверить, что он не главный. 
+\\
+\begin{proof}
+
+    \[2+0\sqrt{-5} = (a+b\sqrt{-5})(x+y\sqrt{-5}) \]
+    \[2-0\sqrt{-5} = (a-b\sqrt{-5})(x-y\sqrt{-5}) \]
+Теперь перемножем оба эти равенства и получим
+\[4 = (a^2+5b^2)(x^2+5y^2)\]
+Понятно, что если $b\neq 0$, то данное тождество не может иметь решений, поэтому $b=0$.
+\begin{enumerate}
+    \item[$a = \pm 1$: ] В этом случае в идеале должно лежать число $1+0\sqrt{-5}$, что невозможно
+    \item[$a = \pm 2$: ] В этом случае идеал содержит число $-2+0\sqrt{-5}$, а значит $I=(2)$. Однако число $1+\sqrt{-5}$, которое лежит в идеале не кратно ему.
+\end{enumerate}
+Таким образом идеал не главный.
+\end{proof}
+\begin{Def}
+Классом элемента по идеалу называется такое множество $x+I = \{x+i|i \in I\}$
+\end{Def}
+\begin{Def}
+Факторкольцом по идеалу называется такое множество $A/I = \{x+I|x\in A\}$. Иными словами это множество всех классов.
+\end{Def}
+\begin{Statement*}
+    Два класса либо непересекаются, либо совпадают.
+\end{Statement*}
+\begin{proof}
+    Пусть это не так, пусть существует $c\in (x+I)\cap (y+I)$. \\Тогда $c = x+i_1 = x+i_2\ra i_3 = x-y = i_2-i_1$. Тогда $x+I = y+ (i_3+I)$ Заметим тогда, что $i_3+I\subset I$, таким образом мы получаем, что классы действительно совпадают.
+\end{proof}
+Так же заметим, что $x_1+I = x_2 + I \lra x_2-x_1\in I$. 
+\subsection*{Операции над классами}
+\begin{itemize}
+    \item Пусть $C_1 = x_1+I,C_2 = x_2+I$ -- два класса. Тогда сумма этих двух классов \[C_1+C_2 = x_1+x_2+I\].
+    \begin{Statement*}
+        Такое определение суммы коректно.
+    \end{Statement*}
+    \begin{proof}
+        Пусть $C_1+C_2 = x_1+x_2+I=y_1+y_2+I$.\\ Тогда рассмотрим $(y_1+y_2)-(x_1+x_2) = (y_1 - x_1)+(y_2-x_2)\in I$, так как каждое слогаемое тут лежит в $I$
+    \end{proof}
+    \item Пусть $C_1 = x_1+I,C_2 = x_2+I$ -- два класса. Тогда произведение этих двух классов \[C_1\cdot C_2 = x_1\cdot x_2+I\].
+    \begin{Statement*}
+        Такое определение произведения коректно.
+    \end{Statement*}
+    \begin{proof}
+        Пусть $C_1\cdot C_2 = x_1\cdot x_2+I = y_1\cdot y_2+I$.\\ Тогда рассмотрим $(y_1\cdot y_2)-(x_1\cdot x_2) = y_1(y_2 - x_2)+x_2(y_1-x_1)\in I$, так как каждое слогаемое тут лежит в $I$
+    \end{proof}
+\end{itemize}
+\subsection*{Пример Факторкольца}
+\begin{itemize}
+    \item $\Z/n\Z = \{0+n\Z,1+n\Z,...,n-1+n\Z\}$ 
+\end{itemize}
+\subsection*{Морфизмы колец}
+\begin{Def}
+    Пусть $A,B$ -- два кольца, $f:A\to B$.\\ Тогда $f$ называется \textbf{гомоморфизмом колец}, если
+    \begin{enumerate}
+        \item $\forall a_1,a_2 \in A\quad f(a_1+a_2) = f(a_1)+f(a_2)$
+        \item $\forall a_1,a_2 \in A\quad f(a_1\cdot a_2) = f(a_1)\cdot f(a_2)$
+        \item $f(1_A) = 1_B$
+    \end{enumerate}
+\end{Def}
+\begin{Proposition*}
+    $f(0_A) = 0_B$
+\end{Proposition*}
+\begin{proof}
+    $f(0) = f(0+0) = f(0)+f(0)\ra 0 = f(0)$
+\end{proof}
+\begin{Remark*}
+    Третья акисомы не нужна в поле, но нужна в кольце, так как нет обратног элемента.
+\end{Remark*}
+\begin{Def}
+    \textbf{Мономорфизм} это гомоморфизм, для которого верно, что\\ $\forall a_1,a_2\quad f(a_1) = f(a_2) \ra a_1 = a_2$
+\end{Def}
+\begin{Def}
+    \textbf{Эпиморфизм} это гомоморфизм, для которого верно, что\\
+    $\forall b \in B \quad \exists a\in A\quad f(a) = b$
+\end{Def}
+\begin{Def}
+    \textbf{Изоморфизм} это мономорфизм и эпиморфизм одновременно 
+\end{Def}
+\section*{11.09.24}
+\hypertarget{p3}{}
+\subsection*{Операции над идеалами}
+\begin{enumerate}
+    \item Пересечение идеалов. Определыется так же как и пересечение множест и очевидно, что пересечение идеалов как множеств является идеалом.
+    \item Сумма идеалов. $\sum I_i = \{\alpha_1+\alpha_2+...+\alpha_k \ | \ \alpha_i\in I_i\}$
+    \item Произведение идеалов. $\prod I_i = \{x_1x_2x_3...x_n\ | \ x_i\in I_i\}$
+    \item Два идеала называются взаимнопростыми, если $I+J = (1)$
+\end{enumerate}
+\begin{Th*}[Китайская теорема об остатках(КТО)] ~\
+    
+    Пусть $A$ - кольцо, $n\bo 2$, $I_1,I_2,I_3,...,I_n$  и  $I_i+I_j = (1)$. Тогда 
+    \[\exists\varphi:A\raisebox{-.5ex}{$/$}_{\bigcap\limits_{i=1}^{\infty}I_i} \to A/I_1\times A/I_2\times...\times A/I_n\]
+\end{Th*}
+\begin{proof} ~\
+    Рассмотрим отображение $\overline{a}(mod \ I_1\cap I_2 \cap ... \cap I_n) \longmapsto (\overline{a}(mod \ I_1)\cdot \overline{a}(mod \ I_2)\cdot...\cdot \overline{a}(mod \ I_n))$
+    \begin{itemize}
+        \item Докажем, что отображение корректно. \\
+        Для этого пусть $a+I_1\cap I_2 \cap ... \cap I_n = a'+I_1\cap I_2 \cap ... \cap I_n\ra a'-a \in I_1\cap I_2 \cap ... \cap I_n\subset I_i\; \forall i$
+        \item Докажем, что данное отображение является гомоморфизмом. Для этого проверим свойства.
+        \begin{itemize}
+            \item Нужно доказать, что $f(\overline{a}+\overline{b})=f(\overline{a})+f(\overline{b})$. Разложим левую и правую часть.\\
+                $f(\overline{a}+\overline{b}) = ((\overline{a}+\overline{b})(mod \; I_1)+(\overline{a}+\overline{b})(mod \; I_2)+(\overline{a}+\overline{b})(mod \; I_3)+...+(\overline{a}+\overline{b})(mod \; I_n
+                ))$\\
+                $f(\overline{a})+f(\overline{b}) = ((\overline{a}(mod\;I_1)+...+\overline{a}(mod\;I_n))+(\overline{b}(mod\;I_1)+...+\overline{b}(mod\;I_n))) = \\ = 
+                ((\overline{a}+\overline{b})(mod \; I_1)+...+(\overline{a}+\overline{b})(mod \; I_n
+                ))$
+            \item Тоже самое, но про умножение доказывается абсолютно аналогично.
+            
+        \end{itemize}
+        \item Докажем, что это Мономорфизм. \\ Пусть $\overline{a}(mod \; I_1)\cdot...\cdot \overline{a}(mod \; I_n) = \overline{b}(mod \; I_1)\cdot...\cdot \overline{b}(mod \; I_n)$\\
+            Тогда \((a-b)\in I_1,\; (a-b)\in I_2,...,(a-b)\in I_n\ra (a-b)\in\cap I_i\ra \overline{a}(mod \; \cap I_i) = \overline{b}(mod \; \cap I_i)\)
+
+        \item Теперь докажем, что это эпиморфизм. Для этого сначала докажем две леммы.
+        \begin{Lemma*}
+            $I_1+I_2 = (1)\; \ra \; A\raisebox{-.5ex}{$/$}_{I_1\cap I_2} \simeq A/I_1\times A/I_2$
+        \end{Lemma*}
+        \begin{proof}
+            Нужно найти $a\in A\quad a-b\in I_1,\; a-c\in I_2$\\
+            $a=b+i_1=c+i_2\; \lra \; b-c = i_2-i_1$ тогда \(i_1 = (c-b)x_1, \;\;\; i_2 = (c-b)x_2\\
+            I_1+I_2 = (1)\ra x_1+x_2 = 1\;\; x_1\in I_1,\; x_2\in I_2\ra (b-c)x_1+(b-c)x_2 = (b-c)\)
+        \end{proof}
+        \begin{Lemma*}
+            Пусть \(I_1,I_2,...,I_n - \text{Идеалы}, \;\; I_1+I_i = (1)\;\forall i\geqslant 2,\text{ то } I_1+\bigcap\limits_{i\geqslant 2}I_j = (1)\)
+        \end{Lemma*}
+        \begin{proof}
+            \(x_2,x_3,x_4,...,x_n\in I_1\quad y_2\in I_2,\; y_3\in I_3,...,y_n\in I_n,\; x_i+y_i = 1\).\\ 
+
+            Тогда возьмём и перемножим все эти равентва. Получиться следующее:
+            \[(x_2+y_2)(x_3+y_3)+...+(x_n+y_n) \ = \ 1 \].
+            
+            Тогда если раскрыть все скобки, то получится $y_1\cdot y_2\cdot y_3\cdot...\cdot y_n+A$, где все слагаемые из $A$ лежат в идеале, а Также
+            \[y_2\cdot y_3\cdot...\cdot y_n\in I_1\cdot I_2\cdot...\cdot I_n\subset I_1\cap I_2\cap...\cap I_n\]
+
+        \end{proof}
+        Теперь соберём все вместе. По первой лемме ясно, что существует изоморфизм  \[\varphi:A\raisebox{-0.5ex}{$/$}_{I_1\cap I_2\cap ... \cap I_n}\to A/I_1\times A/I_2\times...\times A/I_n\]
+        Ну а тогда по индукции существует и искомый изоморфизм. Что и требовалось доказать.
+    \end{itemize}
+\end{proof}
+\subsection*{Простые и максимальные идеалы}
+\begin{Def}
+    Идеал называется \textbf{простым}, если 
+    \begin{enumerate}
+        \item $I\neq(1)$
+        \item $\forall x,y\notin I\;\;\; xy\notin I$
+    \end{enumerate}
+\end{Def}
+\begin{Def}
+    Идеал называется \textbf{максимальным}, если 
+    \begin{enumerate}
+        \item $I\neq(1)$
+        \item $I\subsetneqq J\ra J=(1)$
+    \end{enumerate}
+\end{Def}
+\begin{Th*}
+    Любой максимальный идеал простой.
+\end{Th*}
+\begin{proof}
+    Пусть $\forall x,y\notin I\;\&\; xy\in I$.\\
+ \begin{equation*}   
+    \begin{cases}
+        I\subseteq I+(x)\\
+        I\subseteq I+(y)
+    \end{cases}
+    \ra\quad
+    \begin{cases}
+        i_1+ax = 1\\
+    i_2+by = 1
+    \end{cases}
+    =\quad i_1i_2+i_1by+i_2ax+abxy = 1 \ra 1\in A
+\end{equation*}   
+\end{proof}
+\subsection*{Примеры}\
+\begin{Statement*}
+    В $A = \Z$ все максимальные идеалы совпадают -- идеалы заделанные простыми числами.
+\end{Statement*}
+
+\begin{proof}~\
+    \begin{enumerate}
+        \item $a=0:$ Не годится, идеал нулевой, содержится во всех
+        \item $a=1:$ Не годится, идеал единичный
+        \item $a\geqslant2:$ 
+            \begin{enumerate}[label*=\arabic*.]
+                \item $a = bc,\;\; b\neq 1\neq c \; \ra\; (a)\subseteq (b)$
+                \item $a$ - простое $ = p$.  $(p)\subseteq(p)+(x)\subseteq Z\;\; \ra\; \; p\vdots b \; \ra \; b = 1 \vee b = p\ra$ противоречие в обоих случаях
+            \end{enumerate}
+    \end{enumerate}
+\end{proof}
+\begin{Statement*}
+    $I\subseteq A$ - идеал.
+    \begin{itemize}
+        \item $I$ - простой $\lra A/I$ - область целостности
+        \item $I$ - максимальный $\lra A/I$ - поле
+    \end{itemize}
+\end{Statement*}
+\begin{proof}~\
+    \begin{itemize}
+        \item[$\ra:$]  $x\in I, y\in I, xy\notin I\; \ra \; xy+I\neq 0+I$
+        \item[$\la:$]  $xy+I\neq I\; \ra \; xy\notin I$
+\end{itemize}
+\end{proof}
+\section*{13.09.24}
+\hypertarget{p4}{}
+\subsection*{Евклидовы кольца}
+\begin{Def}
+    Область целостности $A$ называется \textbf{Евклидовым кольцом}, если существует норма $(\norm{\;}:A\setminus \{0\}\to \nat\cup\{0\})$, такая что
+\[\forall a,b \in A, b\neq 0: \;\; \exists q,r\in A\;\;\; a = bq+r, \;\;\; r = 0\vee \norm{r}<\norm{b}\]
+\end{Def}
+\begin{Example*}
+    Если $A = \Z$, то $\norm{b} = |b|$
+\end{Example*}
+\begin{Th*}~\
+    Любое евклидово кольцо является кольцом главных идеалов.
+\end{Th*}
+\begin{proof}
+    Пусть $I$ -- ненулевой идеал, рассмотрим $a \in I,\;\text{такой что}\; \norm{a} = \min\limits_{i\in I\setminus \{0\}}\norm{i}$\\
+    $i\in I\ra i = aq+r, r\neq 0\ra r = i-aq\in I\ra\norm{r}<\norm{a}\; \ra \; I\subset (a)\ra I=(a)$\\
+\end{proof}
+\begin{Statement*}
+    Обратное неверно.
+\end{Statement*}
+\begin{proof}
+    Рассмотрим множество $A = \left\{\frac{a+b\sqrt{-19}}{2}\;|\; a,b\in \Z,\; a\equiv b(mod\; 2)\right\}$. Данное кольцо является кольцом главных идеалов, но не является евклидовым. Доказательство выходит за рамки курса.\\
+\end{proof}
+\subsection*{Обратимые и неразложимые элементы}
+\begin{Def}
+    Пусть $A$ -- область целостности. Тогда $a\in A$ называется \textbf{обратимым}, если $\exists b\in A\;\;\; ab=1$
+\end{Def}
+\begin{Def}
+    Пусть $A$ -- область целостности. Тогда $a\in A$ называется \textbf{неразложимым}, если 
+    \begin{enumerate}
+        \item $a$ не обратимый
+        \item $a = bc \;\lra\;b$ -- обратимый или $c$ -- обратимый
+    \end{enumerate}
+    
+\end{Def}
+
+\begin{Statement*}
+    $(a)$ -- простой $\ra\;\; a$ -- неразложимый 
+\end{Statement*}
+\begin{proof}
+    $a = bc\in (a)\ra b\in (a) \vee c\in(a)\ra b = ad\ra a=adc \ra bc = 1 \ra c\text{ -- обратимый} \ra a\text{ -- обратимый}$\\
+\end{proof}
+\begin{Statement*}
+    $a\text{ -- неразложимый} \ra (a) \text{ -- простой}$ неверно.
+\end{Statement*}
+\begin{proof}
+    В качестве контрпримера возьмём $\Z[\sqrt{-5}]$
+\end{proof}
+\begin{Def}
+    Область целостности $A$ называется \textbf{факториальным кольцом}, если $\forall 0\neq a\in A:$
+    \begin{enumerate}
+        \item $ a = u\cdot p_1\cdot p_2\cdot...\cdot p_n$, где $u$ -- обратим, $p_i$ -- неразложимый
+        \item $ a = u\cdot p_1\cdot p_2\cdot...\cdot p_n = v\cdot q_1\cdot q_2\cdot...\cdot q_m\ra m=n$ и существует отображение $q_i = p_{\pi(i)}\cdot u_i$, где $u_i$ -- обратимы.
+    \end{enumerate}
+\end{Def}
+\begin{Th*}
+    Кольцо главных идеалов явлется факториальным кольцом
+\end{Th*}
+\begin{proof}~\
+    \begin{enumerate}
+        \item \textbf{Существование:} $ a = u\cdot p_1\cdot p_2\cdot...\cdot p_n$, где $u$ -- обратим, $p_i$ -- неразложимый.\\
+              Пусть существует такое ненулевое $a$, у которого нет такого разложения. Тогда построим цепочку вложенных главных идеалов.
+              \[(a)\subset(a_1)\subset(a_2)\subset...\subset(a_n)\subset...\;,\;\; a_i\in A\]
+        \begin{Lemma*}
+            Докажем, что такая цепочка главных идеалов стабилизируется.
+        \end{Lemma*}
+        \begin{proof}
+            Рассмотрим обьединение всех идеалов из этой цепочки\\ $\bigcup\limits_{k=1}^{\infty}(a_n) = (b)$, так как объединения идеалов тоже идеал в этом же кольце, а у нас кольцо главных идеалов, значит любой идела главный.
+
+            $x,y\in \bigcup\limits_{k=1}^{\infty}(a_n) \quad x\in (a_k),\; y\in (a_s)\ra xy\in(a_s)\ra x+y\in(a_s)$\\
+            Заметим, что так как идеал $(b)$ это идеал равный обьединению других идеалов, то $\exists n\;\; b\in(a_n)$. Но тогда он лежит и в каждом следующем.
+            \\ Тогда $b\in (a_n)\ra (b)\subset(a_n)\subset(b)\ra (b)=(a_n)$. По аналогии $(b) = (a_i),\;\; i\bo n$\\
+        \end{proof}
+        Вернёмся к доказательству теоремы. Рассмотрим $a\in A$ и пусть он не неразложимый. Тогда $a = bc,\; b,c$ оба необратимые и либо одно, либо второн не разлагается в произведение неразложимых. Пусть $b$.
+
+        \[(a)\subset(b)\ra b = a\cdot d\ra a=adc\ra c\text{ --- обратимый (противоречие)}\]
+        \item \textbf{Единственность:} Рассмотрим два разложения $a = u\cdot p_1\cdot p_2\cdot ...\cdot p_n = v\cdot q_1\cdot q_2\cdot ...\cdot q_m$\\
+            Проведём индукцию по $m$.
+            \begin{itemize}
+                \item \textbf{База:} $m=0$ --- очевидно.
+                \item \textbf{Переход:} $m>0$. Тогда $u\cdot p_1\cdot p_2\cdot ... \cdot p_n\in (q_m)$ и $q_m$ -- простой.\\ Тогда $p_n\in (q_m) \ra p_n = q_m\cdot u_m$. В этом случае равенство
+                \[a = u\cdot p_1\cdot p_2\cdot ...\cdot p_n = v\cdot q_1\cdot q_2\cdot ...\cdot q_m\]
+                Примет вид
+                \[a = u\cdot p_1\cdot p_2\cdot ...\cdot q_m\cdot u_m = v\cdot q_1\cdot q_2\cdot ...\cdot q_m\]
+                И перейдёт 
+                \[a = u\cdot p_1\cdot p_2\cdot ...\cdot p_{n-1}\cdot u_m = v\cdot q_1\cdot q_2\cdot ...\cdot q_{m-1}\]
+                А дальше по индукции. Тогда действительно $n=m$  и существует биекция.
+            \end{itemize}
+    \end{enumerate}
+\end{proof}
+\section*{18.09.24}
+\hypertarget{p5}{}
+Вспомним, что любое евклидово кольцо является областью главных идеалов, а любая область главных идеалов является факториальным кольцом.\\
+Цель на этой лекции понять, для каких простых чисел существует разложение в сумму целых квадратов. Для начала рассмотрим частные случаи.
+
+\begin{itemize}
+    \item $2 = 1^2+1^2$
+    \item $p = 4k+3 \ra a = 2m,\; b = 2n+1 \ra a^2+b^2 = 4l+1$ противоречие
+    \item $p = 4k+1$. В этом случае на маленьких числах легко проверить наличие разложения. А на больших?
+\end{itemize}
+\begin{Statement*}
+    Кольцо $\Z[i] = \left\{a+bi\;|\;a,b\in\Z\right\}$ евклидово по норме $\norm{u+vi} = u^2+v^2$
+\end{Statement*}
+
+\begin{proof}
+    Рассмотрим $a+bi,c+di\in\Z$, $c+di\neq 0$, $a+bi\text{ не кратно } c+di$ в этом кольце.\\
+    Тогда поделим эти два числа просто в поле $\ce$: $\frac{a+bi}{c+di} = \alpha+\beta i,$ где $\alpha,\beta\in\qu$. Понятно, что найдутся такие $u,v$, для которых 
+    \begin{enumerate}
+        \item $|u-\alpha|\m \frac{1}{2}$
+        \item $|v-\beta|\m \frac{1}{2}$
+    \end{enumerate}
+    Тогда распишем через них $\alpha$ и $\beta$.
+    \[a+bi = (c+di)(\alpha+\beta i) = (c+di)(u+vi) + (c+di)((\alpha - u)+(\beta-v)i)\]
+     $a+bi$ -- делимое, $c+di$ -- делитель, $u+vi$ -- частное и $(c+di)((\alpha - u)+(\beta-v)i)$ -- остаток.
+     Нам нужно доказать, что норма отстатка меньше нормы делителя.
+     \[\norm{(c+di)((\alpha - u)+(\beta-v)i)} = (c^2+d^2)((\alpha - u)^2+(\beta - v)^2)\m (c^2+b^2)(\frac{1}{4}+\frac{1}{4}) = \frac{1}{2}(c^2+d^2)\]
+\end{proof}
+\noindent Теперь мы хотим понять, а сколько сущесвтует обратимых элементов в кольце $\Z[i]$. Ну, пусть нашёлся элемент $a+bi$ такой, что для него существует обратный $c+di$
+\begin{equation*}
+    \begin{rcases}
+      (a+bi)(c+di) = 1 \\
+      (a-bi)(c-di) = 1
+      \end{rcases}
+\ra (a^2+b^2)(c^2+b^2) = 1 \ra a^2+b^2 = 1 \ra 
+\begin{cases}
+    a = \pm1, b=0\\
+    a=0, b=\pm1
+    \end{cases}
+\end{equation*}
+Таким образом у нас только четыре обратимых элементов в $\Z[i]$, а именно $1,-1,i,-i$.
+\begin{Th*}
+    Если $p$ -- простое, то $\Z/p\Z$ -- поле.
+\end{Th*}
+\begin{proof}
+    Нужно доказать, что любой элемент имеет обратный по умножению. Для этого рассмотрим множество всех не нулевых классов в $\Z/p\Z$ и домножим его на ненулевой класс от туда же. Так вот утверждается, что эта операция эквивалентна перестановке.
+    Ну-с, рассмотрим $\left\{\cl{1},\cl{2},...,\cl{p-1}\right\}\to \left\{\cl{1}\cdot\cl{a},\cl{2}\cdot\cl{a},...,\cl{p-1}\cdot\cl{a}\right\}$. Что бы доказать, что это действительно перестановка
+    нужно доказать, что ничто не обратится в ноль и два класса не совпадут.
+    \begin{enumerate}
+        \item Ну пусть нашлось такое $k$, что $\cl{k}\cdot\cl{a} = \cl{0} \ra ka\;\vdots\; p$ противоречие
+        \item Пусть $\cl{k_1}\cdot\cl{a} = \cl{k_2}\cdot\cl{a} \ra (k_1-k_2)\cdot a\;\vdots\; p \ra k_1=k_2$
+    \end{enumerate}
+    Таким образом, так как это перестановка, то какой-то элемент перейдёт в $\cl{1}$. Тогда $\cl{a}$ является его обратным по умножению. А так как перестановки всегда отличаются, то и для любого элемента найдётся обратный.\\
+\end{proof}
+\begin{Th*}[Вильсона]
+    Пусть $p$ -- простое, тогда $(p-1)! + 1\; \vdots \; p$
+\end{Th*}
+\begin{proof}
+    Рассмотрим $p \bo 5$. Тогда рассмотрим множетво $W = \left\{\cl{2},\cl{3},...,\cl{p-2}\right\}$. Понятно, что для любого $\cl{a}\in W$ найдётся $\cl{b}\in W$ такой что $\cl{a}\cdot\cl{b} = \cl{1}$.
+    Тогда данное множество можно представить следующим образом.
+    \[W = \left\{\cl{2},\cl{3},...,\cl{p-2}\right\} = \left\{\cl{a_1},\cl{b_1}\right\}\cup\left\{\cl{a_2}, \cl{b_2}\right\}\cup...\cup\left\{\cl{a_{\frac{p-3}{2}}},\cl{b_{\frac{p-3}{2}}}\right\}\]
+    В каждой получившейся паре будут взаимнообратные элементы. Тогда 
+    \[\cl{2}\cdot\cl{3}\cdot...\cdot\cl{p-2} = \cl{1}\]
+    А тогда
+    \[\cl{1}\cdot\cl{2}\cdot\cl{3}\cdot...\cdot\cl{p-1} = \cl{p-1} = \cl{-1}\]
+    Ну а это и означает, что $(p-1)!+1\;\vdots\; p$\\
+\end{proof}
+\noindent Пусть $p=4k+1$ простое. Тогда расположим остатки от деления следующим образом.
+\[\cl{-\frac{p-1}{2}},...,\cl{-2},\cl{-1},\cl{1},\cl{2},...,\cl{\frac{p-1}{2}}\]
+Так как $p=4k+1$, то $\frac{p-1}{2} = 2k$, то бишь чётное, то если их перемножить получится $\cl{1}$
+\\
+Тогда по Теореме Вильсона ${(\frac{p-1}{2})!}^2+1\;\vdots\; p$. 
+\\Рассмотрим $x = (\frac{p-1}{2})!$. Тогда $x^2+1\;\vdots \; p\ra (x+i)(x-i)\;\vdots\;p \text{ в }\Z[i]$. В этом случае $p$ не может быть неразложимым. Тогда в $\Z[i]$
+
+\begin{equation*}
+    \begin{rcases}
+      p = (a+bi)(c+di) \\
+      p = (a-bi)(c-di)
+      \end{rcases}
+\ra p = (a^2+b^2)(c^2+b^2) \ra a^2+b^2 = p \text{ и } c^2+d^2 = p
+\end{equation*}
+Последний переход верен, потому что ни один из множителей не равен 1. Если бы это было так, то $p$ был бы обратим.
+Собственно мы и получили что хотели.
+\\\\
+Теперь докажем единственность такого представления. Ну пусть $p = a^2+b^2 = a_1^2+b_1^2$, тогда $p = (a+bi)(c+di) = (a_1+b_1i)(c_1+d_1i)$. Ну, тогда пусть 
+\begin{equation*}
+    \begin{rcases}
+      a+bi = (r+si)(\tilde{r}+\tilde{s}i) \\
+      a-bi = (r-si)(\tilde{r}-\tilde{s}i)
+      \end{rcases}
+\ra p = (r^2+s^2)(\tilde{r}^2+\tilde{s}^2)\text{ противоречие}
+\end{equation*}
+Тогда $a+bi = (a_1\pm b_1i)\cdot u$, где $u \in \{-1,1,-i,i\}$. При выполнении полного перебора станет ясно, что разложение единственно. Таким образом разложение единственно.
+\\
+\\
+Дальше стоит заметить, что 
+\[(a^2+b^2)(c^2+d^2) = (ac+bd)^2+(ad-bc)^2\]
+То есть произведение сумм квадратов снова сумма квадратов. Тогда, так как любое число в факториальном кольце раскладывается на произведение простых, то если эти все простые вида $4k+1$, то и само число раскладывается в сумму квадратов.
+\section*{20.09.24}
+\hypertarget{p1}{}
+\begin{Th*}[КТО для $\Z$]
+    Пусть $m_1,m_2,...,m_n\in\Z$ и $(m_i,m_j) = (1)$. Тогда 
+    \[\Z\raisebox{-.1ex}{$/$}_{m_1\cdot m_2\cdot m_3\cdot...\cdot m_n\Z}\simeq\Z/m_1\Z\times\Z/m_2\Z\times...\times\Z/m_n\Z\]
+\end{Th*}
+\noindent Доказательство ничем не отличается от доказательство самой КТО.
+\begin{Designation*}
+Будем обозначать за $A^{*}$ множество обратимых элементов кольца $A$.
+\end{Designation*}
+\noindent Заметим, что \[(\cl{a_1},\cl{a_2},...,\cl{a_n})\in (\Z/m_1\Z\times\Z/m_2\Z\times...\times\Z/m_n\Z)^{*} \;\lra\; \cl{a_1}\in (\Z/m_1\Z)^{*}, ..., \cl{a_n}\in (\Z/m_n\Z)^{*} \]
+Поэтому возникает достаточно логичный вопрос. А как узнать количество обратимых элементов у того или иного множества. Для это была придумана функция Эйлера.
+\begin{Def}
+    Функция $\varphi:\nat\to\nat,\;\; \varphi(n) = \left|\left(\Z/n\Z\right)\raisebox{1ex}{*}\right|$ называется \textbf{функцией Эйлера}
+\end{Def}
+\noindent Заметим, что по КТО $\varphi(m_1\cdot m_2\cdot...\cdot m_n) = \varphi(m_1)\cdot\varphi(m_2)\cdot...\cdot \varphi(m_n)$.
+\\
+Кроме того данное определение можно дать ещё одним способом, а именно:
+\begin{itemize}
+    \item $\varphi(1) = 1$
+    \item $\varphi(n) = \big|\left\{m\;|\;1\m m \m n-1,\; (m,n) = (1)\right\}\big|$
+\end{itemize}
+\begin{Problem*}
+    Вычислить значение функции Эйлера в явном виде.
+\end{Problem*}
+\begin{enumerate}
+    \item $n = p$ -- простое. В этом случае $\varphi(n) = \varphi (p) = p-1$
+    \item $n$ -- составное. Тогда $n = p_1^{k_1}\cdot p_2^{k_2}\cdot...\cdot p_s^{k_s} \ra \varphi(n) = \varphi(p_1^{k_1})\cdot \varphi(p_2^{k_2})\cdot...\cdot \varphi(p_s^{k_s}) = \\
+     = p_1^{k_1}\cdot p_2^{k_2}\cdot...\cdot p_s^{k_s}\cdot(1 - \frac{1}{p_1})^{k_1}(1 - \frac{1}{p_2})^{k_2}...(1-\frac{1}{p_s})^{k_s} = n\cdot(1 - \frac{1}{p_1})^{k_1}(1 - \frac{1}{p_2})^{k_2}...(1-\frac{1}{p_s})^{k_s}$ 
+\end{enumerate}
+\begin{Th*}[Эйлера]
+    Пусть $n\in\nat, a\in Z, (a,n) = (1)$. Тогда $a^{\varphi(n)}-1\;\vdots\;n$
+\end{Th*}
+
+\begin{proof}
+    Рассмотрим $\cl{b_1},\cl{b_2},...,\cl{b_{\varphi(n)}}\in (\Z/n\Z)^{*}$ -- попарно различные обратимые элементы.
+    Будем действовать аналогично доказательству того, что $\Z/p\Z$, а именно домножим каждый класс на какой-то обратимый $\cl{a}$. Ровно так же доказывается, что это снова перестановка.
+    Заметим, что \[\cl{b_1}\cdot\cl{b_2}\cdot\cl{b_3}\cdot...\cdot\cl{b_n} = (\cl{a}\cdot\cl{b_1})(\cl{a}\cdot\cl{b_2})...(\cl{a}\cdot\cl{b_n})\]
+    А тогда \[\cl{b_1}\cdot\cl{b_2}\cdot\cl{b_3}\cdot...\cdot\cl{b_n}\cdot ({\cl{a}}^{\varphi(n)} - 1) = \cl{0}\ra({\cl{a}}^{\varphi(n)} - 1) = \cl{0} \lra (\cl{a}^{\varphi(n)} - 1)\;\vdots\; n \]
+\end{proof}
+\begin{Corollary*}[Малая теорема Ферма]
+    Пусть $p$ - простое $\ra a\in\Z\; a\nd p\ra (a^{p-1} - 1)\;\vdots \;p $
+\end{Corollary*}
+\begin{Corollary*}[Переформулировка малой теоремы Ферма]
+    $\forall a\in Z\;\; a^p-a\;\vdots\; p$
+\end{Corollary*}
+\begin{proof}
+
+
+\begin{enumerate}
+    \item $a=1\;\;\; 1^{p}-1 = 0\;\vdots\; p$
+    \item $a\leadsto a+1:\;\;\;     a^p-a\;\vdots\; p\ra (a+1)^p - (a+1)\;\vdots\; p\\
+    (a+1)^p - (a+1) = a^p +C_{p}^{1}a^{p-1}+C_{p}^{2}a^{p-2}+...+C_{p}^{p-1}a+\cancel{1}-a-\cancel{1}$\\
+    Вспомним, что \[C_{p}^{k}  = \frac{p!}{k!(p-k!)}\de p\]
+    Тогда по предположеию индукции они вся большая сумма кратна $p$.
+\end{enumerate}
+\end{proof}
+\begin{Th*}
+    Пусть $n\bo 2, n\in nat$. Тогда $1)\lra2)$
+    \begin{itemize}
+        \item $\exists a,b\in \Z, \; n=a^2+b^2$
+        \item В разложении на простые множители каждый простой множитель $p$ сравним с $3(\;mod\; 4)$ стоит в чётной степени.
+    \end{itemize} 
+\end{Th*}
+\begin{proof}~\
+    \begin{itemize}
+        \item $1)\ra2):$ Пусть нет и $n$ - наименьший такой элемент, что $n = a^2+b^2 = .........p^{2k+1}.......$
+        $p \equiv 3(\; mod \; 1)$
+        \begin{enumerate}
+            \item $\cl{b} = \cl{0}\ra \left(\frac{\cl{a}}{\cl{b}}\right)+\cl{1} = \cl{0}\ra {\left(\frac{\cl{a}}{\cl{b}}\right)}^2 = \cl{-1}$
+            \item $\cl{b} = \cl{0}\ra \cl{a} = \cl{0}\ra a,b\de p\ra a = pa_1,\;b=pb_1\ra p^2\cdot(a_1^2+b_1^2) = ......p^{2k+1}.......\ra a_1^2+b_1^2 = ......p^{2k-1}.......$ -- противоречие 
+        \end{enumerate}
+        \item $2)\ra1):$ Уже было в курсе
+    \end{itemize}
+\end{proof}
+\subsection*{Теорема Дирихле о простых числах}
+\begin{Th*}
+    Пусть $a\in\Z\; d\in \nat\;\;\; (a,d) = (1) \ra $ в последовательности $a,a+d,a+2d,...$ имеется беконечное число простых чисел. 
+\end{Th*}
+Данная теорема очевидна для случая, когда $a = 1 = d$, ведь тогда пусть $p$ - наибольшее простое, тогда $p!+1$ тоже простое.
+\subsection*{НОД}
+\begin{Def}
+    Пусть $A$ -- область целостности. $a,b\in A\;\;\; d\in A$ называется НОДом $a$ и $b$, если
+    \begin{itemize}
+        \item $a\de b\; \&\; b\de d$
+        \item $a\de c \;\&\; b\de c \ra d\de c$
+    \end{itemize}
+\end{Def}
+Понятно, что если $a = b = 0 \ra d = 0$
+\begin{Statement*}
+    НОД единственный
+\end{Statement*}
+\begin{proof}
+    Пусть нет, пусть существует два НОДа $d$ и $d'$
+    \begin{equation*}
+        \begin{rcases}
+            d\de d'\ra d = d'\cdot q\\
+            d'\de d \ra d' = d\cdot v
+        \end{rcases}
+        \ra d = duv\ra d(1-uv) = 0\ra 1-uv = 0\ra uv = 1\ra d = d'
+    \end{equation*}
+\end{proof}
+\section*{25.09.24}
+\hypertarget{p7}{}
+\begin{Th*}
+    Если $A$ -- факториально, то $\forall a,b\in A\;\text{существует НОД}(a,b)$
+\end{Th*}
+\begin{proof}
+
+Понятно, что если $a=0\ra$ НОД$(a,b) = b,\;b\neq 0$. Поэтому рассмотрим второй случай. Пусть
+ $a,b\neq 0$ \[a = u\cdot p_1^{n_1}\cdot p_2^{n_2}\cdot...\cdot p_k^{n_k},\; u\text{ -- обратимый}\]\[b = v\cdot p_1^{n_1}\cdot p_2^{n_2}\cdot...\cdot p_k^{n_k},\; v\text{ -- обратимый}\]
+        Данное представление возможно, потому что мы допускаем, что какие-то степени равны 0.\\
+        Рассмотрим $s_i = \min(n_i,m_i)\ra d = \NoD{a}{b} = p_1^{s_1}\cdot p_2^{s_2}\cdot...\cdot p_k^{s_k}$. Докажем это.
+        Для того надо доказать две вещи, а именно, что $d$ -- делитель и что $d$ делит любой другой делитель.
+        \begin{enumerate}
+            \item Весьма очевидно, что $d$ действительно делитель.
+            \item Пусть $c = w\cdot p_1^{s_1} \cdot p_2^{s_2}\cdot...\cdot p_k^{s_k}\cdot q_1^{r_1}\cdot q_2^{r_2}\cdot...\cdot q_t^{r_t}$ и $a\de c,\; b\de c$. Легко заметить, что все $r_i$ будут равны $0$,
+            ведь в противном случае разложение будет не единственное, что противоречит факториальности. Поэтому можно смело сказать, что $a = cd$. Теперь докажем, что $l_i\m m_i$.
+            Ну пусть это не так. Тогда \[l_i>m_i\ra w\cdot p_1^{s_1} \cdot p_2^{s_2}\cdot...\cdot p_{i-1}^{s_{i-1}}\cdot p_{i+1}^{s_{i+1}}... = .......p_i^{l_i-m_i}.......\]
+            Что противоречит единственности разложения. Противоречие. Аналогично $l_i\m n_i$. Таким образом $d$ -- дейcтвительно НОД.
+            
+        \end{enumerate}
+
+\end{proof}
+\begin{Th*}
+    Пусть $A$ -- колько главных идеалов. $a,b\in A\quad (a,b) = \left\{ax+by\;|\;x,y\in A\right\}$ -- Идеал.\\
+    $(a,b) = (d)$, так как это колько главных идеалов. Тогда $d = \NoD{a}{b}$
+\end{Th*}
+\begin{proof}~\
+    \begin{enumerate}
+        \item $d$ -- делитель
+        \item $d = ax+by\quad a\de d',\; b\de d'\ra d\de d'$
+    \end{enumerate}
+    Что и требовалось доказать.
+\end{proof}
+\subsection*{Алгоритм Евклида}
+Пусть $A$ -- евклидово кольцо, $a,b\neq 0\ra \NoD{a}{b} = ?\quad \norm{a}\bo \norm{b}\\ a = bq+r$, где либо $r = 0$, либо $\norm{r}\m \norm{b}$. Алгоритм работает так:
+\begin{enumerate}
+    \item $r = 0\ra \NoD{a}{b} = 0$
+    \item $r\neq 0\ra \NoD{a}{b} = \NoD{b}{r}$
+\end{enumerate}
+Покажем, что оно вообще имеет место быть так. Пусть $d = \NoD{a}{b}\ra r = a-bq\ra r\de d$. 
+Тогда $d$ это общий делитель $b$ и $r$. Докажем, что он наибольший.
+\\
+Пусть $d'$ ещё один общий делитель $b$ и $r$. $a=bq+r\ra a\de d',\; b\de d'\ra d\de d'$.
+\subsection*{Кольцо степенных рядов Лорана и колько многоленов}
+\begin{Def}
+    Пусть $A$ - колько, $x$ - переменная. Тогда рядом Лорана называется такой ряд: $a_0+a_1x+a_2x^2+...+a_nx^n+...$.
+\end{Def}
+Докажем, что множество таких рядов является кольцом. Для начала определим операции.
+\begin{itemize}
+    \item \textbf{Сложение:} Обычное покомпонентное. 
+    \[a_0+a_1x+...+a_nx^n+...+b_0+b_1x+...+b_nx^n+... = (a_0+b_0)+(a_1+b_1)x+...+(a_n+b_n)x^n+...\]
+    \item \textbf{Умножение:} Раскрытие скобок.
+    \[ \left(\sum\limits_{i=0}^{\infty}a_ix^i\right) \left(\sum\limits_{i=0}^{\infty}b_ix^i\right) = a_0b_0+(a_1b_0+a_0b_1)x+...+(\sum\limits_{i=0}^{n}a_ib_{n-i})x^n \]
+\end{itemize}
+Определили операции, теперь докажем св-ва.
+\begin{enumerate}
+    \item \textbf{Ассоциативность:} Пусть $f,g,h$ -- ряды Лорана.
+    \begin{equation*}
+        \begin{rcases}
+            f = f_0+f_1x+...\\
+            g = g_0+g_1x+...\\
+            h = h_0+h_1x+...
+        \end{rcases}
+        \ra (fg)h=f(gh)\text{ -- проверяется в лоб раскрытием скобок}
+    \end{equation*}
+
+    \item \textbf{Ноль по сложению:} Ноль из кольца $A$
+    \item \textbf{Единица по умножению:} Единица из кольца $A$
+    \item Остальные очевидные.
+\end{enumerate}
+\begin{Def}
+    Многочленом над $A$ называется ряд Лорана, у которого НСНМ все коэффициенты равны 0.
+\end{Def}
+Несколько замечаний.
+\begin{Remark*}~\
+    \begin{itemize}
+        \item Пусть $\deg(f) = n,\; \deg(g) = m\ra \deg(fg) \m n+m$
+        \item $\deg(0) = -\infty$
+        \item $\deg(f+g)\m \max(\deg(f),\deg(g))$
+    \end{itemize}
+\end{Remark*}
+\begin{Designation*}
+    $A\big[[x]\big]$ -- кольцо рядов Лорана и $A[x]$ -- кольцо многочленов.
+\end{Designation*}
+\begin{Proposition*}
+    $A$ -- целостное$\;\ra A\big[[x]\big],\; A[x]$ -- целостные.
+\end{Proposition*}
+\begin{proof}
+
+\begin{equation*}
+    \begin{rcases}
+        f = a_0+a_1x+...+a_nx^n+... \neq 0\\
+        g = b_0+b_1x+...+b_nx^n+... \neq 0
+    \end{rcases}
+    \ra \exists n,m\;\; a_n, b_m\neq 0\;\; \forall i,j < n,m:\;\;a_i = 0,\; b_j = 0
+\end{equation*}
+\begin{enumerate}
+    \item Коэффициенты ряда $fg$ при $x^k,\;\; k<m+n\;\;$ -- $\sum\limits_{i+j=k}a_ib_j = 0$ и либо $i<n$, либо $j<m$.
+    \item Коэффициенты ряда $fg$ при $x^k,\;\; k=m+n\;\;$ -- $\sum\limits_{i+j=m+n}a_ib_j = a_mb_n$. 
+\end{enumerate}
+    Таким образом делителей нуля нет.
+\end{proof}
+\section*{27.09.24}
+\hypertarget{p8}{}
+\begin{Th*}
+    Пусть $k$ -- кольцо, $k[t]$ -- кольцо многочленов является евклидовым.
+\end{Th*}
+\begin{proof}
+    Сначала покажем норму, по которой строится евклидовость.
+    \[\norm{\cdot}:k[t]\setminus\{0\}\to\nat\setminus\{0\}\;\;\;\norm{k} = \deg k\]
+    Теперь надо проверить, что если $f,g\in k[t], g\neq 0\ra$ существует представление $f = gq+r$, где $q$ и $r$ -- многолены и либо $r = 0$, либо $\deg r \m \deg g$
+    \begin{enumerate}
+        \item $\deg f < \deg g \ra f = g\cdot 0 + f$. Все условия соблюдены.
+        \item $\deg f \bo \deg g$. Будем уменьшать степень $f$. Распишем это.
+        \[f(t) = a_nt^n+a_{n-1}^{n-1}+...+a_0,\; \deg f = n,\; (a_n\neq 0)\]
+        \[g(t) = b_mt^m+b_{m-1}^{m-1}+...+b_0,\; \deg g = m,\; (b_m\neq 0)\]
+
+    \end{enumerate}
+Рассмотрим $g(t)\cdot t^{n-m}\cdot b_m^{-1}\cdot a_n$. Вычтем это из $f(t)$. $\deg(f(t)-g(t)\cdot t^{n-m}\cdot b_m^{-1}\cdot a_n)<n$
+\begin{itemize}
+    \item Получилась степень меньше $g$. Тогда мы победили.
+    \item Не получилось, тогда делаем ещё раз.
+\end{itemize}
+Евклидовость доказана.
+\end{proof}
+\begin{Remark*}
+    Евклидовость влечёт факториальность. Тогда любой многочлен раскладывается.
+\end{Remark*}
+\noindent Теперь мы хотим найти все обратимые элементы в $K[\Z]$
+\begin{Problem*}
+    Пусть $m>0$, $a_m\neq 0\neq b_n$ и пусть выполнено
+    \[(a_mt^m+a_{m-1}t^{m-1}+...+a_0)(b_nt^n+b_{n-1}x^{n-1}+...+b_0) = 1\]
+    В таком случае $a_mb_nt^{n+m}+...+a_0b_0 = 1$. Ну а так как $a_m\neq 0 \neq b_m$, то мы пришли к противоречию. 
+    таким образом элемент обратим, только есл он лежит в $K$.
+\end{Problem*}
+\noindent Также заметим, что если $f\neq 0$, то 
+\[f = u\cdot p_1^{k_1}\cdot p_2^{k_2}\cdot...\cdot p_n^{k_n}, \text{ где } p_i \text{ -- неразложимый многочлен, } \deg p_i>0 \text{ и } u\in K^{*}\]
+\begin{Remark*}
+    Многочлен со старшим коэффициентом  1 называется унитарным
+\end{Remark*}
+\begin{Remark*}
+    Неразложимый многочлен иногда называеют неприводимым
+\end{Remark*}
+\begin{Example*}
+    Хотим понять является ли многочлен $t^2+1$ разложмым.
+    \begin{itemize}
+        \item $\re:$ Пусть $t^2+1 = (t-a)(t-b) = t^2 - (a+b)t + ab \ra a=-b \ra a^2 = -1$ противоречие.
+        \item $\ce:\;\; (t^2+1) = (t-i)(t+i)$ 
+    \end{itemize}
+\end{Example*}
+\subsection*{И снова комплексные числа}
+\begin{Lemma*}
+    Пусть $A$ -- кольцо главных идеалов, $P$ -- ненулевой простой идеал $\ra P$ -- максимальный.
+\end{Lemma*}
+
+\begin{proof}
+    $P = (a),\; a = u\cdot p_1\cdot p_2\cdot...\cdot p_n,\; p_i$ -- неприводимые. Нам нужно, что бы был ровно один $p$, потому что иначе идеал не максимальный.
+    \begin{enumerate}
+        \item $n = 0 \ra a = u$ -- обратимый, что невозможно
+        \item $n > 1 \ra u\cdot p_1\cdot (p_2\cdot...\cdot p_n)\in P$
+                \begin{enumerate}
+                    \item $u\cdot p_1\in P = (a)\ra u\cdot p_1 = u\cdot q_1\cdot q_2\cdot...\cdot q_m$. противоречие с единственностью разложения.
+                    \item $(p_2\cdot...\cdot p_n) \in P \ra$ противоречие с простотой идеала.
+                \end{enumerate}
+        \item $n = 1$ Всё ок. Это единственный возможный вариант.
+    \end{enumerate}
+
+    \noindent Таким образом $a = u\cdot p_1$. Теперь исходя из этого докажем максимальность.\\
+    Пусть существет идеал $I$, такой что $(p_1)\subsetneqq I$. Тогда $I = (b)\ra p_1 = bc$. 
+    Вспомним, что $p_i$ неразложимый. Тогда $b$ или $c$ обратимый.
+    \begin{enumerate}
+        \item $b$ -- обратим $\ra I = (b) = 1$. Можно домножить на $b^{-1}$
+        \item $c$ -- обратим $\ra (p_1) = (b)$ противоречие 
+    \end{enumerate}
+    Таким образом идеал максимальный. Лемма доказана.
+\end{proof}
+\subsection*{Пример работы с кольцом многочленов}
+    Рассмотрим $\raisebox{.75ex}{$\re[x]$}\raisebox{-.3ex}{$/$}_{(x^2+1)}$. Это поле, так как $(x^2+1)$ максимальный.\\
+    Классы оттуда выглядят следующим образом: $f\in \re[x]\;\; \{f+(x^2+1)q\}$. Понятно, что тогда если
+    \[\deg f\m 1\ra \deg(f+(x^2+1)q_1)\m 1 \text{ и } \deg(f+(x^2+1)q_2)\m 1\ra \deg((x^2+1)(q_2-q_1))\m 1 \ra q_1=q_2\]
+    Вывод: в каждом таком классе ровно один линейный многочлен. Тогда мы можем можем определять операции на них.
+    \begin{itemize}
+        \item \textbf{Сложение:} обычное покомпонентное
+        \item \textbf{Умножение:} $(a+bx)(c+dx) = ac+(ad+bc)x+bdx^2 = (ac-bd)+(ad+bc)x$\\
+                Последний переход в данном случае верен, потому что $|x^2-(-1)| = x^2+1\ra $ они в одном классе.
+    \end{itemize} 
+    Таким образом сделаем вывод $\myfac{\re[x]}{(x^2+1)}\simeq \ce\;\;\; (\varphi(a+bx) = a+bi)$
+\subsection*{Теорема Безу}
+Рассмотрим $f\in A[x],\; c\in A\quad f(t) = a_nt^n+a_{n-1}t^{n-1}+...+a_0,\;\;f(c) = a_nc^n+a_{n-1}c^{n-1}+...+a_0$
+\\
+Тогда рассмотрим отображение
+\[\varphi: A[t]\to A\;\;\;\varphi(f(t)) = f(c)\]
+Вполне очевидно, что данное отображение является и гомоморфизмом и эпиморфизмом, однако оно НЕ является мономорфизмом, потому что $f(t-c)\mapsto c$
+\begin{Def}
+    Такой гомоморфизм называется специализацией в элементе $c$ или подстановкой элемента $c$.
+\end{Def}
+\begin{Th*}
+    Пусть $A$ -- кольцо, $c \in A$, $f\in A[t]$. Тогда следующие два условия эквивалентны:
+    \begin{enumerate}
+        \item $f(c)=0$
+        \item $f\de (t-c)$
+    \end{enumerate}
+\end{Th*}
+\begin{proof}~\
+    \begin{itemize}
+        \item \textbf{2)$\ra$1):} $f(t) = (t-c)g(t)\ra f(c) = (c-c)g(c) = 0$
+        \item \textbf{1)$\ra$2):} $f(c) = 0 \ra f(t) = f(t)-f(c)\de (t-c)\;\;\; (?)$\\
+        Заметим, что $t^m - c^m = (t-c)(t^{m-1}+t^{m-2}c+...+c^{m-1})$. Тогда рассмотрим
+        \[f(t) = f(t)-f(c) = (a_nt^n - a_nc^n)+... = a_n(t^n - c^n)+... = (t-c)\cdot(\text{Что-то, плевать что})\]
+    \end{itemize}
+    Что и требовалось доказать.
+\end{proof}
+\begin{Th*}[Безу]
+    Пусть $K$ -- поле. Тогда остаток от деления многочлена $f\in K[t]$ на $(t-c)$ равен $f(c)$
+\end{Th*}
+\noindent Данная теорема напрямую вытекает из предыдущей.
+\begin{Corollary*}
+    Ненулевой многочлен $n$-ной степени имеет не более чем $n$ корней.
+\end{Corollary*}
+\begin{proof}~\\
+Дан многочлен $f$, $\deg f = n$, $c_1,c_2,...,c_m$ -- различные корни многочлена. Мы очень хоти понять, что $m<n$.\\
+По теореме Безу $f\de (t-c_i)$. Тогда легко увидеть, что по факториальности 
+\[f(t) =(t - c_1)(t-c_2)(t-c_3)\cdot...\cdot(t-c_m)\cdot(\text{что-то})\] 
+Посмотрим на степень
+\[\deg\big((t - c_1)(t-c_2)(t-c_3)\cdot...\cdot(t-c_m)\big) = m\ra \deg f \bo m \ra n\bo m\]
+\begin{enumerate}
+    \item $m<n\ra$ Противоречие с единственностью разложения.
+    \item $m=n\ra f(t) =(t - c_1)(t-c_2)(t-c_3)\cdot...\cdot(t-c_m)\cdot a$. В этом случае $a$ называется старшим коэффициентом $f$.
+\end{enumerate}
+\end{proof}
+\subsection*{Теорема Вильсона(Here we go again)}
+$\mathds{F}_p$ -- поле, а именно какое-то множество остатков по модулю $p$. Тогда рассмотрим $\mathds{F}_p[t]$.
+\\
+\[t^p-t = t(t-\cl{1})(t - \cl{2})(t-\cl{3})\cdot...\cdot(t-\cl{p-1})\]
+Теперь сократим на $t$. Получим
+\[t^{p-1}-1 = (t-\cl{1})(t - \cl{2})(t-\cl{3})\cdot...\cdot(t-\cl{p-1})\]
+Старшие коэффициенты должны быть равны, а значит действительно равенство такое.\\
+Кроме того, у этих многоленов должны быть равны свободные члены, а значит действительно $(p-1)!+1\de p$
+\subsection*{Сопряжённые комплексного числа, модуль комплексного числа}
+\begin{Def}
+    Пусть $z = a+bi$. Тогда его сопряжённым называется число $\cl{z} = a-bi$.
+\end{Def}
+\begin{Remark*}
+    Число $a$ называется вещественной частью ($Re\ z$), а число $b$ -- мнимой ($Im \ z$)
+\end{Remark*}
+\begin{Def}
+    Модулем комплексного числа называется вещественное число $|z| = \sqrt{z\cdot\cl{z}} = \sqrt{a^2+b^2}$
+\end{Def}
+\noindent Заметим, что таким образом любое колмплексное число можно изобразить на плоскости точкой с кардинатами $(a,b)$.
+\begin{Remark*}\
+    \begin{itemize}
+        \item Модуль комплексного числа на плоскости это длинна отрезка из нуля до точки изображения.
+        \item Сопряжённое число симметрично относительно оси абсцисс обычному числу.
+    \end{itemize}
+\end{Remark*}
+\begin{Statement*}\ \\
+    Пусть $z_1,z_2\in\ce$
+    \begin{itemize}
+        \item $\cl{z_1+z_2} = \cl{z_1}+\cl{z_2}$
+        \item $\cl{z_1\cdot z_2} = \cl{z_1}\cdot \cl{z_2}$
+        \item $\cl{1} = 1$
+        \item $|z_1+z_2|\m |z_1|+|z_2|$
+        \item $|z_1|\cdot|z_2|\m |z_1+z_2|$
+    \end{itemize}
+\end{Statement*}
+\noindent Все эти утверждения доказываются либо в лоб, либо графически.
+\end{document}
