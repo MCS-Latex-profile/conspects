@@ -22,5 +22,6 @@
   г) [Библиотека по с++](https://en.cppreference.com/w/cpp/algorithm), и [еще одна](https://www.cplusplus.com/reference/algorithm/) 
 
 ## 6) [Физкультура](https://timetable.spbu.ru/Events/PhysTraining)
-
+## Актуальные листочки по предметам:
+a) [Алгебра](https://github.com/MCS-Latex-profile/conspects/blob/main/24-09rings.pdf)
 ### Ваши пожелания, угрозы, предложения можете направить сюда - https://t.me/text_text_0
